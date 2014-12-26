@@ -1,0 +1,343 @@
+@charset "utf-8";
+/* CSS Document */
+
+*, *:after, *:before{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@font-face{
+	font-family: 'nexa-b';
+	src: url('fonts/nb.otf');
+}
+
+@font-face{
+	font-family: 'nexa-l';
+	src: url('fonts/nl.otf');
+}
+
+@font-face{
+	font-family: 'sertig';
+	src: url('fonts/Sertig.otf');
+}
+
+html{
+	overflow-x: hidden;
+	height: 100%;
+}
+
+ul{
+	list-style-type: none;
+	text-decoration: none;
+}
+
+body{
+	font-family: nexa-b;
+		background: #1f1326;
+}
+
+.logo{
+	position: fixed;
+	top: 35px;
+	left: 23px;
+	z-index: 10;
+	perspective: 600px;
+	-webkit-animation: revolve 10s infinite ease-in-out;
+	-moz-animation: revolve 10s infinite ease-in-out;
+	-o-animation: revolve 10s infinite ease-in-out;
+	animation: revolve 10s infinite ease-in-out;
+	transition: all 0.3s ease-out;
+}
+.master-list{
+	width: 200vw;
+}
+.master-list>li{
+	float: left;
+}
+
+.navigation{
+	position: relative;
+	height: 100vh;
+	width: 0vw;
+	top: 0;
+	left: 0;
+	display: block;
+	transition: width 0.3s ease-out, top 0.5s linear;
+
+}
+
+
+.content{
+	
+	width: 100vw;
+	left: 0;
+	top: 0;
+}
+
+.nav{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #1f1326;
+	box-shadow: inset -2px -2px 8px 1px rgba(0,0,0,0.3);
+	overflow: hidden;
+}
+
+.nav-links{
+	position: relative;
+width: 25vw;
+height: 450px;
+margin-top: 145px;
+}
+
+.nav-link{
+	width: 91%;
+height: 60px;
+color: white;
+padding-left: 29px;
+padding-top: 20px;
+font-family: nexa-l;
+
+margin: 0 auto;
+}
+
+.nav-link:not(:last-child){
+	border-bottom: 1px solid #483354;
+}
+
+.page-link{
+	color: white;
+text-transform: uppercase;
+text-decoration: none;
+}
+
+.page-link i{
+	transition: 0.3s linear;
+	font-size: 1.5em;
+}
+
+.page-link:hover i{
+	color: #faaf16;
+}
+
+.name-link{
+font-size: 0.9em;
+float: right;
+padding-right: 30px;
+letter-spacing: 1px;
+}
+
+
+
+.container{
+	width: 100%;
+}
+
+.pages{
+	width: 100%;
+	
+}
+
+.pages>li{
+	width: 100%;
+	height: 100%;
+	margin: 0 0;
+}
+
+.page{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.bg{
+	
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	position: absolute;
+
+
+}
+
+.bg>li{
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.bg-image{
+	width: 100%;
+}
+
+
+
+.intro{
+	color: white;
+	position: absolute;
+	text-transform: uppercase;
+	margin-left: 31vw;
+	margin-top: 10vh;
+	letter-spacing: 3pt;
+	font-size: 10pt;
+	top: 0;
+}
+
+.sub{
+	/*color: 
+	#ffdf55;*/
+	font-size: 15pt;
+}
+
+.heading{
+	font-size: 70pt;
+	margin: 15px 0;
+	letter-spacing: 25pt;
+	color: white;
+	text-transform: uppercase;
+	width: 400px;
+	}
+
+	.inside .heading{
+		font-size: 50pt;
+		letter-spacing: 5pt;
+	}
+
+	.sub-heading{
+	font-size: 17pt;
+margin: 10px 0;
+letter-spacing: 2pt;
+color: white;
+font-family: nexa-l;
+text-transform: uppercase;
+font-style: italic;
+	}
+
+	.dates{
+font-family: nexa-b;
+	}
+
+	.bitot{
+		padding-top: 15px;
+border-top: 11px solid white;
+	}
+.presents{
+	text-transform: lowercase;
+	font-family: nexa-l;
+}
+
+.date{
+font-size: 20pt;
+top: -10px;
+	color: #ffdf55;
+}
+
+.bit{
+	font-size: 15pt;
+
+}
+
+.slant{
+	font-style: italic;
+}
+
+.sav{
+	top: -5px;
+}
+
+.year{
+	padding-bottom: 15px;
+border-bottom: 1px solid;
+}
+
+.slides{
+	width: 1000%;
+	position: relative;
+	height: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+.slides li{
+	position: relative;
+	float: left;
+	width: 100vw;
+	height: 100%;
+}
+
+.slides li img{
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}
+
+.title{
+margin-top: 18vh;
+margin-left: 53vw;
+padding-top: 30px;
+border-top: 10px solid white;
+}
+
+.desc{
+	font-family: sertig;
+font-size: 17pt;
+color: #FFDF55;
+width: 300px;
+font-style: italic;
+margin-left: 15vw;
+margin-top: -200px;
+}
+
+.lectures .heading{
+	font-size: 45pt;
+}
+
+.slide-controls{
+	position: absolute;
+	width: 80px;
+	list-style-type: none;
+	color: white;
+	z-index: 5;
+	top: 75vh;
+	left: 55vw;
+}
+
+.slide-controls li{
+	display: block;
+	width: 25px;
+	float: left;
+	opacity: 0.5;
+	margin-left: 15px;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+.slide-controls li:hover{
+	opacity: 1;
+}
+
+
+@-webkit-keyframes revolve{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(360deg);}
+}
+@-moz-keyframes revolve{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(360deg);}
+}
+
+@-o-keyframes revolve{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(360deg);}
+}
+
+@keyframes revolve{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(360deg);}
+}
+
