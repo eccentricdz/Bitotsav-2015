@@ -164,7 +164,72 @@ $(document).ready(function(){
 					event.preventDefault();
 				slideChange($('.'+currentPage).children('.slides'),dir);
 				}
+			});
+
+			var isMouseDown = false;
+			var mouseDownX, mouseDownY, mouseUpX;
+			var lastMarginLeft = 0;
+
+			var slide = $('.slides>li');
+
+			slide.on('mousedown', function(event){
+				event.stopPropagation();
+				console.log('mouse down on '+event.target);
+				isMouseDown = true;
+				mouseDownX = event.clientX;
+				mouseDownY = event.clientY;
+				//lastSlideLeft = $(this).parent().css('left');
 			})
+
+			slide.on('mouseup', function(event){
+				event.stopPropagation();
+				console.log('mouse down off '+event.target);
+
+				if(isMouseDown)
+					isMouseDown = false;
+				else
+					return false;
+				var dir;
+				mouseUpX = event.clientX;
+				var diff = mouseUpX-mouseDownX;
+				if(diff>0)
+					dir= 'prev';
+				else if(diff<0)
+					dir = 'next';
+				else
+					return false;
+
+				if((dir=='prev'&&$(this).index()==0)||(dir=='next')&&$(this).next().length==0)
+					{$(this).parent().animate({
+					marginLeft: 0,
+					},
+					100, function() {
+					/* stuff to do after animation is complete */
+				});
+				return false;
+			}
+
+				slideChange($(this).parent(), dir);
+				//$(this).parent().css('margin-left', 0);
+			});
+
+
+			slide.on('mousemove', function(event){
+				event.stopPropagation();
+				var mouseMoveX = event.clientX;
+
+				if(isMouseDown)
+				{
+					var diff = mouseMoveX-mouseDownX;
+					lastMarginLeft = diff;
+					$(this).parent().css('margin-left', diff+'px');
+				}
+				else
+					return false;
+			})
+
+
+
 
 			function slideChange(slides, dir){
 				var ontop = slides.find('.ontop');
@@ -181,6 +246,16 @@ $(document).ready(function(){
 				}
 
 				slides.css('left', '-'+(nextontop.index()*100)+'vw');
+				setTimeout(function(){
+					slides.animate({
+					marginLeft: 0,
+					},
+					100, function() {
+					/* stuff to do after animation is complete */
+				});
+				}, 300);
+				
+
 
 				nextontop.addClass('ontop');
 				ontop.removeClass('ontop');
