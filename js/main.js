@@ -45,6 +45,30 @@ $(document).ready(function(){
 		// 	scrollSpeed: 900
 		// });
 
+		var pageLink = $('.page-link');
+
+		pageLink.on('click', function(event) {
+			event.preventDefault();
+			var nextPage = $(this).attr('id');
+
+			if(nextPage==currentPage)
+				return false;
+			var currIndex = $('li#'+currentPage).index();
+			var nextIndex = $('li#'+nextPage).index();
+
+			console.log(nextPage+": "+nextIndex);
+			var dir;
+			if(currIndex<nextIndex)
+				dir = 'next';
+			else
+				dir = 'prev';
+
+			var i;
+			for(i=0;i<Math.abs(currIndex-nextIndex); i++){
+				slidePage(dir);
+			}
+					});
+
 		var onScroll = function(event){
 				// console.log(scrollActive);
 				// 	if(!scrollActive){
@@ -80,19 +104,25 @@ $(document).ready(function(){
 			if(nextPage.length==0)
 				return;
 
+			var navLinkIcon = $('.page-link i.active');
+				navLinkIcon.removeClass('active')
+
 			currentPage = nextPage.attr('id');
 			activePage.removeClass('active-page');
 			nextPage.addClass('active-page');
 
 			if(currentPage=='home'){
 				$('.navigation').css('width', '0vw');
-				setTimeout(function(){scrollAnim(nextPage.offset().top, dir); }, 300);
+				setTimeout(function(){scrollAnim(nextPage.offset().top, dir);$('.navigation').css('width', '0vw'); }, 300);
 			}
 			else
 				scrollAnim(nextPage.offset().top, dir);
 				// $('.logo').css('margin-left', '0vw');}
+
+				navLinkIcon = $('a#'+currentPage+' i');
+				navLinkIcon.addClass('active')
 			
-			
+			console.log('current page: '+currentPage);
 
 
 		}
@@ -121,6 +151,20 @@ $(document).ready(function(){
 				var slides = $(this).parent().siblings('.slides');
 				slideChange(slides, dir);
 			});
+
+			$(document).on('keydown', function(event){
+				var dir = 'none';
+				if(event.which==37)
+					dir = 'prev';
+				else if(event.which==39)
+					dir = 'next';
+				
+				if(dir!='none')
+				{
+					event.preventDefault();
+				slideChange($('.'+currentPage).children('.slides'),dir);
+				}
+			})
 
 			function slideChange(slides, dir){
 				var ontop = slides.find('.ontop');

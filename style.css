@@ -123,6 +123,10 @@ text-decoration: none;
 	color: #faaf16;
 }
 
+.page-link i.active{
+	color: #faaf16;
+}
+
 .name-link{
 font-size: 0.9em;
 float: right;
