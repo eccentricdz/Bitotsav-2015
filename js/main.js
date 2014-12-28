@@ -12,13 +12,24 @@ $(document).ready(function(){
 
 		bg.find('li:not(".current-bg")').fadeOut('slow');
 
-
-		$('.navigation').on('mouseover', function(){
+		var navMouseOver = function(){
 			$(this).css('width', '25vw');
-		});
+			$(this).off('mouseover', navMouseOver);
+			$('.name-link').each(function(index, el) {
+				$(el).replaceWith($(el).clone(true));
+			});
+			}
 
-		$('.navigation').on('mouseout', function(){
+		$('.navigation').on('mouseover', navMouseOver);
+
+		// $('.navigation').on('transitionend', function(event) {
+		// 	event.preventDefault();
+			
+		// });
+
+		$('.navigation').on('mouseleave', function(){
 			$(this).css('width', '9vw');
+			$(this).on('mouseover', navMouseOver);
 		});
 
 		var bgSlideshow = setInterval(function(){
