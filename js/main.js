@@ -12,12 +12,18 @@ $(document).ready(function(){
 
 		bg.find('li:not(".current-bg")').fadeOut('slow');
 
+		
+
 		var navMouseOver = function(){
 			$(this).css('width', '25vw');
 			$(this).off('mouseover', navMouseOver);
 			$('.name-link').each(function(index, el) {
 				$(el).replaceWith($(el).clone(true));
 			});
+
+			$('.navigation .fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
+			$(this).css('opacity', '1');
+		});
 			}
 
 		$('.navigation').on('mouseover', navMouseOver);
@@ -29,7 +35,9 @@ $(document).ready(function(){
 
 		$('.navigation').on('mouseleave', function(){
 			$(this).css('width', '9vw');
+			$('.navigation .fade').css('opacity','0');
 			$(this).on('mouseover', navMouseOver);
+			
 		});
 
 		var bgSlideshow = setInterval(function(){
@@ -106,6 +114,7 @@ $(document).ready(function(){
 		function slidePage(dir){
 			
 			$(window).off('scroll',onScroll);
+			$('.fade').css('opacity', '0');
 			var activePage = $('.active-page');
 			if(dir=='next')
 			var nextPage = activePage.next();
@@ -135,7 +144,17 @@ $(document).ready(function(){
 			
 			console.log('current page: '+currentPage);
 
+		}
 
+		function startAnimation(el)
+		{
+			el.find('.anim').each(function(index, el){
+				$(el).replaceWith($(el).clone(true));
+			});
+
+			$('.fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
+			$(this).css('opacity', '1');
+		});
 		}
 
 		
@@ -151,6 +170,8 @@ $(document).ready(function(){
 			
 			if(dir=='next'&&currentPage=='nights')
 				$('.navigation').css('width', '9vw');
+
+			startAnimation($('#'+currentPage+' .ontop'));
 				// $('.logo').css('margin-left', '8vw');}
 		})
 			}
@@ -244,7 +265,7 @@ $(document).ready(function(){
 
 			function slideChange(slides, dir){
 				var ontop = slides.find('.ontop');
-
+				$('.fade').css('opacity', '0');
 				if(dir=='next'){
 				var nextontop = ontop.next();
 				if(nextontop.length==0)
@@ -256,6 +277,9 @@ $(document).ready(function(){
 					nextontop = ontop.nextAll().last();
 				}
 
+				ontop.removeClass('ontop');
+				nextontop.addClass('ontop');
+
 				slides.css('left', '-'+(nextontop.index()*100)+'vw');
 				setTimeout(function(){
 					slides.animate({
@@ -263,13 +287,13 @@ $(document).ready(function(){
 					},
 					100, function() {
 					/* stuff to do after animation is complete */
+					startAnimation($('#'+currentPage+' .ontop'));
 				});
 				}, 300);
 				
 
 
-				nextontop.addClass('ontop');
-				ontop.removeClass('ontop');
+				
 			}
 
 

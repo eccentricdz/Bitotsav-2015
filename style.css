@@ -139,13 +139,7 @@ font-size: 0.9em;
 float: right;
 padding-right: 30px;
 letter-spacing: 1px;
-}
 
-.left-right-padding{
-	-webkit-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	-moz-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	-o-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
 }
 
 .nav-link:nth-child(1) .name-link{
@@ -263,6 +257,8 @@ letter-spacing: 1px;
   user-select: none;
 }
 
+
+
 .heading{
 	font-size: 70pt;
 	margin: 15px 0;
@@ -271,6 +267,8 @@ letter-spacing: 1px;
 	text-transform: uppercase;
 	width: 400px;
 	}
+
+
 
 	.inside .heading{
 		font-size: 50pt;
@@ -399,6 +397,37 @@ margin-top: -200px;
 	opacity: 1;
 }
 
+.fade{
+	transition: opacity 0.2s;
+}
+
+.left-right-padding.fade{
+	-webkit-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
+	-moz-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
+	-o-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
+	animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
+	opacity: 0;
+}
+
+.move-up.fade{
+	-webkit-animation: move-up 0.8s ease-out 1, fade 0.8s linear 1;
+	-moz-animation: move-up 0.8s ease-out 1, fade 0.8s linear 1;
+	-o-animation: move-up 0.8s ease-out 1, fade 0.8s linear 1;
+	animation: move-up 0.8s ease-out 1, fade 0.8s linear 1;
+	opacity: 0;
+}
+
+.sub-heading.anim{
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-o-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	-webkit-animation-speed: 0.2s;
+	-moz-animation-speed: 0.2s;
+	-o-animation-speed: 0.2s;
+	animation-speed: 0.2s;
+
+}
 
 @-webkit-keyframes revolve{
 	from{transform: rotateY(0deg);}
@@ -483,5 +512,38 @@ margin-top: -200px;
 	}
 	to{
 		padding-right: 30px;
+	}
+}
+
+@-webkit-keyframes move-up{
+	from{
+		transform: translateY(30px);
+	}
+	to{
+		transform: translateY(0px);
+	}
+}
+@-moz-keyframes move-up{
+	from{
+		transform: translateY(30px);
+	}
+	to{
+		transform: translateY(0px);
+	}
+}
+@-o-keyframes move-up{
+	from{
+		transform: translateY(30px);
+	}
+	to{
+		transform: translateY(0px);
+	}
+}
+@keyframes move-up{
+	from{
+		transform: translateY(30px);
+	}
+	to{
+		transform: translateY(0px);
 	}
 }
