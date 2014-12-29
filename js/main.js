@@ -114,7 +114,7 @@ $(document).ready(function(){
 		function slidePage(dir){
 			
 			$(window).off('scroll',onScroll);
-			$('.fade').css('opacity', '0');
+			$('.active-page .fade').css('opacity', '0');
 			var activePage = $('.active-page');
 			if(dir=='next')
 			var nextPage = activePage.next();
@@ -265,7 +265,7 @@ $(document).ready(function(){
 
 			function slideChange(slides, dir){
 				var ontop = slides.find('.ontop');
-				$('.fade').css('opacity', '0');
+				$('.ontop .fade').css('opacity', '0');
 				if(dir=='next'){
 				var nextontop = ontop.next();
 				if(nextontop.length==0)
