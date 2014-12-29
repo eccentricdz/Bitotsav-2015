@@ -17,10 +17,10 @@
 	src: url('fonts/nl.otf');
 }
 
-@font-face{
+/*@font-face{
 	font-family: 'sertig';
 	src: url('fonts/Sertig.otf');
-}
+}*/
 
 html{
 	overflow-x: hidden;
@@ -33,7 +33,7 @@ ul{
 }
 
 body{
-	font-family: nexa-b;
+		font-family: Roboto;
 		background: #1f1326;
 }
 
@@ -106,7 +106,8 @@ height: 60px;
 color: white;
 padding-left: 29px;
 padding-top: 20px;
-font-family: nexa-l;
+font-family: Roboto;
+font-weight: 400;
 
 margin: 0 auto;
 }
@@ -239,7 +240,7 @@ letter-spacing: 1px;
 	text-transform: uppercase;
 	margin-left: 31vw;
 	margin-top: 10vh;
-	letter-spacing: 3pt;
+	letter-spacing: 2pt;
 	font-size: 10pt;
 	top: 0;
 }
@@ -266,6 +267,7 @@ letter-spacing: 1px;
 	color: white;
 	text-transform: uppercase;
 	width: 400px;
+	font-family: nexa-b;
 	}
 
 
@@ -276,13 +278,12 @@ letter-spacing: 1px;
 	}
 
 	.sub-heading{
+		font-family: nexa-l;
 	font-size: 17pt;
 margin: 10px 0;
 letter-spacing: 2pt;
 color: white;
-font-family: nexa-l;
 text-transform: uppercase;
-font-style: italic;
 	}
 
 	.dates{
@@ -295,17 +296,18 @@ border-top: 11px solid white;
 	}
 .presents{
 	text-transform: lowercase;
-	font-family: nexa-l;
 }
 
 .date{
+	font-family: nexa-b;
 font-size: 20pt;
 top: -10px;
 	color: #ffdf55;
 }
 
 .bit{
-	font-size: 15pt;
+	font-size: 12pt;
+	font-family: nexa-b;
 
 }
 
@@ -319,7 +321,7 @@ top: -10px;
 
 .year{
 	padding-bottom: 15px;
-border-bottom: 1px solid;
+border-bottom: 11px solid;
 }
 
 .slides{
@@ -361,11 +363,12 @@ border-top: 10px solid white;
 }
 
 .desc{
-	font-family: sertig;
-font-size: 17pt;
+	font-family: Roboto;
+	font-weight: 200;
+	font-style: italic;
+font-size: 15pt;
 color: #FFDF55;
 width: 300px;
-font-style: italic;
 margin-left: 15vw;
 margin-top: -200px;
 }
@@ -402,10 +405,10 @@ margin-top: -200px;
 }
 
 .left-right-padding.fade{
-	-webkit-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	-moz-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	-o-animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
-	animation: left-right-padding 0.8s ease-out 1, fade 0.8s linear 1;
+	-webkit-animation: left-right-padding 0.3s ease-out 1, fade 0.3s linear 1;
+	-moz-animation: left-right-padding 0.3s ease-out 1, fade 0.3s linear 1;
+	-o-animation: left-right-padding 0.3s ease-out 1, fade 0.3s linear 1;
+	animation: left-right-padding 0.3s ease-out 1, fade 0.3s linear 1;
 	opacity: 0;
 }
 
