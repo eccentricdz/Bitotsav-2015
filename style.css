@@ -296,6 +296,8 @@ border-top: 11px solid white;
 	}
 .presents{
 	text-transform: lowercase;
+	letter-spacing: 2pt;
+	font-weight: 300;
 }
 
 .date{
@@ -307,7 +309,7 @@ top: -10px;
 
 .bit{
 	font-size: 12pt;
-	font-family: nexa-b;
+	font-family: roboto;
 
 }
 
@@ -364,9 +366,9 @@ border-top: 10px solid white;
 
 .desc{
 	font-family: Roboto;
-	font-weight: 200;
-	font-style: italic;
-font-size: 15pt;
+	font-weight: 300;
+	letter-spacing: 1px;
+font-size: 13pt;
 color: #FFDF55;
 width: 300px;
 margin-left: 15vw;
