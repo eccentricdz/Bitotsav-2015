@@ -253,7 +253,23 @@ $(document).ready(function(){
 				if(isMouseDown)
 				{
 					var diff = mouseMoveX-mouseDownX;
-					lastMarginLeft = diff;
+				if(diff>0)
+					dir= 'prev';
+				else if(diff<0)
+					dir = 'next';
+				// 	lastMarginLeft = diff;
+				// 	if(((dir=='prev'&&$(this).index()==0)||((dir=='next')&&$(this).next().length==0))&&(diff>250))
+				// 	{
+				// 		$(this).parent().animate({
+				// 	marginLeft: 0,
+				// 	},
+				// 	200, function() {
+				// 	/* stuff to do after animation is complete */return false;
+				// });
+						
+				// 	}
+
+
 					$(this).parent().css('margin-left', diff+'px');
 				}
 				else
