@@ -28,13 +28,10 @@ $(document).ready(function(){
 			})
 
 			$('#backward, #forward').on('click', function(){
-				//currentSong.css('opacity', '0');
 				var currentSong = $('.current-song');
 				(currentSong).replaceWith((currentSong).clone(true));
-				console.log('next-prev');
-			// $('.fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
-			// $(this).css('opacity', '0.5');
-			// })
+				//currentSong.css('opacity', '0.3');
+				//console.log('next-prev');
 		});
 		//audio config ends
 
