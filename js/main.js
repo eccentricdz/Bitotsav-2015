@@ -10,6 +10,34 @@ $(document).ready(function(){
 		var vh = window.innerHeight;
 		var vw = window.innerWidth;
 
+		var audio = document.getElementById('bg-audio');
+		
+
+
+		//audio config
+			audio.volume = 0.3;
+			$('.play').on('click', function(){
+				//$(this).css('display', 'none');
+				$('.pause').css('display', 'block');
+				audio.play();
+			})
+
+			$('.pause').on('click', function(){
+				$(this).css('display', 'none');
+				audio.pause();
+			})
+
+			$('#backward, #forward').on('click', function(){
+				//currentSong.css('opacity', '0');
+				var currentSong = $('.current-song');
+				(currentSong).replaceWith((currentSong).clone(true));
+				console.log('next-prev');
+			// $('.fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
+			// $(this).css('opacity', '0.5');
+			// })
+		});
+		//audio config ends
+
 		bg.find('li:not(".current-bg")').fadeOut('slow');
 
 		

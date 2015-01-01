@@ -14,6 +14,21 @@
 <body>
 
 	<img src="images/bitotsav.png" alt="bitotsav logo" class="logo revolve" />
+	<audio id="bg-audio" preload autoplay>
+		<source src="audio/Smooth-ride-lounge-ambient-track.mp3" type="audio/mpeg">
+		<source src="audio/Smooth-ride-lounge-ambient-track.ogg" type="audio/ogg">
+	</audio>
+	<p class="current-song move-right fade anim">Smooth ride lounge-ambient track!</p>
+	<ul class="audio-controls controls">
+		<li id="backward"><i class="fa fa-backward"></i></li>
+		<li id="play-pause">
+			<ul class="pp">
+				<li class="pause"><i class="fa fa-pause"></i></li>
+				<li class="play"><i class="fa fa-play"></i></li>
+			</ul>
+		</li>
+		<li id="forward"><i class="fa fa-forward"></i></li>
+	</ul>
 	<ul class="master-list">
 		<li class="navigation">
 	<div class="nav">
@@ -64,7 +79,7 @@
 			<li id="nights">
 			<div class="page nights">
 
-				<ul class="slide-controls">
+				<ul class="controls slide-controls">
 					<li id="prev"><i class="fa fa-angle-left fa-2x"></i></li>
 					<li class="next"><i class="fa fa-angle-right fa-2x"></i></li>
 				</ul>
@@ -77,7 +92,7 @@
 							<p class="heading move-up fade anim hts">hts</p>
 						</div>
 
-						<p class="desc">Some random description 
+						<p class="desc move-right anim fade">Some random description 
 							about the given page. 
 							Briefing the details with 
 							columbus words and 
@@ -93,7 +108,7 @@
 							
 						</div>
 
-						<p class="desc">Some random description 
+						<p class="desc move-right anim fade">Some random description 
 							about the given page. 
 							Briefing the details with 
 							columbus words and 
@@ -106,7 +121,7 @@
 
 			<li id="lectures">
 			<div class="page lectures">
-				<ul class="slide-controls">
+				<ul class="controls slide-controls">
 					<li id="prev"><i class="fa fa-angle-left fa-2x"></i></li>
 					<li class="next"><i class="fa fa-angle-right fa-2x"></i></li>
 				</ul>
@@ -120,7 +135,7 @@
 							<p class="heading move-up fade anim ures">ures</p>
 						</div>
 
-						<p class="desc">Some random description 
+						<p class="desc move-right anim fade">Some random description 
 							about the given page. 
 							Briefing the details with 
 							columbus words and 
