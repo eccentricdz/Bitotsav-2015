@@ -11,11 +11,11 @@ $(document).ready(function(){
 		var vw = window.innerWidth;
 
 		var audio = document.getElementById('bg-audio');
-		
+		var songIndex = 1;
 
 
 		//audio config
-			audio.volume = 0.3;
+			audio.volume = 0.4;
 			$('.play').on('click', function(){
 				//$(this).css('display', 'none');
 				$('.pause').css('display', 'block');
@@ -33,9 +33,22 @@ $(document).ready(function(){
 				//currentSong.css('opacity', '0.3');
 				//console.log('next-prev');
 		});
+
+			$('#forward').on('click', function(){
+				changeSong('next');
+			})
+
+			$('#backward').on('click', function(){
+				changeSong('prev');
+			})
+
+			function changeSong(dir)
+			{
+				console.log(dir+' song');
+			}
 		//audio config ends
 
-		bg.find('li:not(".current-bg")').fadeOut('slow');
+		bg.find('li:not(".current-bg")').velocity('fadeOut', {duration: 'slow'});
 
 		
 
@@ -72,7 +85,8 @@ $(document).ready(function(){
 			if(nextBg.length==0)
 				nextBg = currentBg.prevAll().last();
 
-			nextBg.fadeIn(2000);currentBg.fadeOut(2000);
+			nextBg.velocity('fadeIn', {duration: 2000});
+			currentBg.velocity('fadeOut', {duration: 2000});
 			nextBg.addClass('current-bg');
 			currentBg.removeClass('current-bg');
 		}, 6000);
@@ -187,10 +201,13 @@ $(document).ready(function(){
 		function scrollAnim(pos, dir)
 			{
 				$('.navigation').css('top',pos+'px');
-		$('body, html').animate({
-			scrollTop : pos
-		}, 500, function(){
-			lastScrollTop = pos;
+		$('body, html').velocity("scroll", 
+			{duration: 500,
+			 offset: pos,
+			 axis: 'y',
+			 easing: 'easeInSine', 
+			 complete: function(){
+		lastScrollTop = pos;
 			$(window).on('scroll',onScroll);
 			
 			if(dir=='next'&&currentPage=='nights')
@@ -198,8 +215,9 @@ $(document).ready(function(){
 
 			startAnimation($('#'+currentPage+' .ontop'));
 				// $('.logo').css('margin-left', '8vw');}
-		})
-			}
+		}
+			});
+	}
 
 			var controls = $('.slide-controls');
 			controls.children('li').on('click', function(event) {
@@ -257,12 +275,15 @@ $(document).ready(function(){
 					return false;
 
 				if((dir=='prev'&&$(this).index()==0)||(dir=='next')&&$(this).next().length==0)
-					{$(this).parent().animate({
+					{
+						$(this).parent().velocity({
 					marginLeft: 0,
 					},
-					100, function() {
+					{
+					duration: 100, complete: function() {
 					/* stuff to do after animation is complete */
-				});
+				}
+			});
 				return false;
 			}
 
@@ -321,16 +342,20 @@ $(document).ready(function(){
 				ontop.removeClass('ontop');
 				nextontop.addClass('ontop');
 
-				slides.css('left', '-'+(nextontop.index()*100)+'vw');
-				setTimeout(function(){
-					slides.animate({
+				slides.velocity({left: '-'+(nextontop.index()*100)+'vw'}
+					,
+					{
+						duration: 500,
+						easing: [0.175, 0.885, 0.320, 1.275]
+					}).velocity({
 					marginLeft: 0,
 					},
-					100, function() {
+					{duration: 100, complete: function() {
 					/* stuff to do after animation is complete */
 					startAnimation($('#'+currentPage+' .ontop'));
-				});
-				}, 300);
+				}
+			});
+				
 				
 
 
