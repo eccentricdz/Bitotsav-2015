@@ -597,6 +597,48 @@ transition: all 0.2s linear;
 	color: white;
 }
 
+#cat{
+	position: relative;
+	margin-left: 40vw;
+	margin-top: 20px;
+	width: 225px;
+}
+
+#cat button{
+	width: 100%;
+}
+
+.event-cat{
+	width: 210%;
+	color: white;
+	list-style: none;
+	margin-top: 15px;
+	opacity: 0;
+	transition: all 0.2s linear;
+}
+
+.visible{
+	opacity: 1;
+}
+
+.event-cat li{
+	float: left;
+	width: 48%;
+	padding: 12px 35px;
+	color: white;
+	border: 2px solid white;
+	margin-top: 3px;
+	margin-right: 5px;
+	cursor: pointer;
+	display: block;
+		transition: all 0.2s linear;
+}
+
+.event-cat li:hover{
+	color: #FFDF55;
+	border-color: #FFDF55;
+}
+
 
 .sub-heading.anim{
 	-webkit-animation-delay: 0.5s;

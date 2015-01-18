@@ -31,22 +31,23 @@
 		<li id="forward"><i class="fa fa-forward"></i></li>
 	</ul>
 	<button class="register"><i class="fa fa-plus"></i><span>register</span></button>
+
 	
 	<div class="reg">
 		<i class="fa fa-close fa-2x"></i>
 		<form action="" id="register">
 			<div class="input-wrapper">
-				<input type="text" id="name" required/>
+				<input type="text" id="name" name="name" required/>
 				<label for="name">Full Name</label>
 			</div>
 			
 			<div class="input-wrapper">
-				<input type="email" id="email" required />
+				<input type="email" id="email" name="email" required />
 				<label for="email">Email Address</label>
 			</div>
 
 			<div class="input-wrapper">
-				<input type="password" id="password" required />
+				<input type="password" id="password" name="password" required />
 				<label for="password">Password</label>
 			</div>
 
@@ -56,27 +57,27 @@
 			</div>
 
 			<div class="input-wrapper">
-				<input type="tel" id="tel" required />
+				<input type="tel" id="tel" name="phone" required />
 				<label for="tel">Phone Number</label>
 			</div>
 
 			<div class="input-wrapper">
-				<input type="text" id="college" required/>
+				<input type="text" id="college" name="college" required/>
 				<label for="college">College</label>
 			</div>
 
 				<div class="input-wrapper">
-				<input type="text" id="city" required/>
+				<input type="text" id="city" name="city" required/>
 				<label for="city">City</label>
 			</div>
 
 			<div class="input-wrapper">
-				<input type="text" id="state" required/>
+				<input type="text" id="state" name="state" required/>
 				<label for="state">State</label>
 			</div>
 
 			<div class="input-wrapper">
-				<input type="radio" name="sex" value="male"><span>Male</span>
+				<input type="radio" name="sex" value="male" required><span>Male</span>
 				<input type="radio" name="sex" value="female"><span>Female</span>
 			</div>
 
@@ -200,6 +201,44 @@
 				</ul>
 			</div>
 			</li> -->
+			
+			<li id="events">
+			<div class="page events">
+				<ul class="controls slide-controls">
+					<li id="prev"><i class="fa fa-angle-left fa-2x"></i></li>
+					<li class="next"><i class="fa fa-angle-right fa-2x"></i></li>
+				</ul>
+				<ul class="slides">
+					<li class="front ontop">
+						<img src="images/events/brain.jpg" alt="brain" class="bg-image" />
+						<div class="title">
+							<p class="heading move-up fade anim gue">Events</p>
+						</div>
+
+						<p class="desc move-right anim fade">Some random description 
+							about the given page. 
+							Briefing the details with 
+							columbus words and 
+							random content</p>
+							<div id="cat" class="anim fade move-up">
+								<button class="category"><i class="fa fa-caret-down"></i><span>Select a category</span></button>
+								<ul class="event-cat">
+									<li id="dance">Dance</li>
+									<li id="Music">Music</li>
+									<li id="drama">Drama</li>
+									<li id="literature">Literature</li>
+									<li id="arts">Fine Arts</li>
+									<li id="oration">Oration</li>
+									<li id="quizzing">Quizzing</li>
+									<li id="journalism">Journalism</li>
+								</ul>
+							</div>
+							
+					</li>
+				</ul>
+			</div>
+			</li>
+
 
 		</ul>
 

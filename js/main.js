@@ -389,5 +389,9 @@ $(document).ready(function(){
 				//$(window).on('scroll', onScroll);
 			}
 
+			$('.category').on('click', function(){
+				var eventCat = $('.event-cat');
+				eventCat.toggleClass('visible');
+			})
 
 });
