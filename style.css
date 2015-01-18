@@ -536,11 +536,11 @@ form#register{
 input{
 	width: 100%;
 padding: 10px;
-font-size: 18pt;
+font-size: 16pt;
 font-family: Roboto;
 background: transparent;
 border: none;
-border-top: 3px solid rgb(150,150,150);
+border-top: 1px solid rgb(150,150,150);
 border-bottom: 3px solid rgb(150,150,150);
 color: #fff;
 transition: all 0.2s linear;
