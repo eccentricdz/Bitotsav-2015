@@ -13,7 +13,10 @@ $(document).ready(function(){
 		var audio = document.getElementById('bg-audio');
 		var songIndex = 1;
 
+		var reg = $('.reg');
+			var register = $('.register');
 
+		
 		//audio config
 			audio.volume = 0.4;
 			$('.play').on('click', function(){
@@ -361,6 +364,23 @@ $(document).ready(function(){
 
 				
 			}
+
+			var login = $('.login');
+			login.on('click', function(e){
+				console.log('login');
+			})
+
+			$('input').on('focus', function(e){
+				$(this).siblings('label').css('top','-55%');
+			})
+
+			
+			register.on('click', function(){
+				reg.css('display', 'block');
+			})
+			$('.fa-close').on('click', function(){
+				reg.css('display', 'none');
+			})
 
 
 });

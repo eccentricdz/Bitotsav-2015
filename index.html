@@ -15,7 +15,7 @@
 <body>
 
 	<img src="images/bitotsav.png" alt="bitotsav logo" class="logo revolve" />
-	<audio id="bg-audio" preload autoplay>
+	<audio id="bg-audio" preload>
 		<source src="audio/Smooth-ride-lounge-ambient-track.mp3" type="audio/mpeg">
 		<source src="audio/Smooth-ride-lounge-ambient-track.ogg" type="audio/ogg">
 	</audio>
@@ -30,6 +30,39 @@
 		</li>
 		<li id="forward"><i class="fa fa-forward"></i></li>
 	</ul>
+	<button class="register"><i class="fa fa-plus"></i><span>register</span></button>
+	
+	<div class="reg">
+		<i class="fa fa-close fa-2x"></i>
+		<form action="" id="register">
+			<div class="input-wrapper">
+				<input type="text" id="name" required/>
+				<label for="name">Full Name</label>
+			</div>
+			<div class="input-wrapper">
+				<input type="text" id="college" required/>
+				<label for="college">College</label>
+			</div>
+			<div class="input-wrapper">
+				<input type="email" id="email" required />
+				<label for="email">Email Address</label>
+			</div>
+
+			<div class="input-wrapper">
+				<input type="password" id="password" required />
+				<label for="password">Password</label>
+			</div>
+
+			<div class="input-wrapper">
+				<input type="tel" id="tel" required />
+				<label for="tel">Phone Number</label>
+			</div>
+
+			<button type='sumbit' id='submit'><i class="fa fa-check"></i><span>Submit</span></button>
+
+		</form>
+	</div>
+
 	<ul class="master-list">
 		<li class="navigation">
 	<div class="nav">
@@ -41,9 +74,9 @@
 			<li class="nav-link">
 				<a href="#nights" id='nights' class="page-link"><i class="fa fw  fa-flash"></i><span class="name-link left-right-padding fade">nights</span></a>
 			</li>
-			<li class="nav-link">
+			<!-- <li class="nav-link">
 				<a href="#lectures" id='lectures' class="page-link"><i class="fa fw  fa-microphone"></i><span class="name-link left-right-padding fade">guest lectures</span></a>
-			</li>
+			</li> -->
 			<li class="nav-link">
 				<a href="#events" id='events' class="page-link"><i class="fa fw  fa-flag-o"></i><span class="name-link left-right-padding fade">events</span></a>
 			</li>
@@ -69,8 +102,8 @@
 				</ul>
 				<div class="intro">
 				<p class="sub bit">Birla Institute of Technology, Mesra</p><p class="presents">presents</p>
-				<p class="bitot heading">bitot</p>
-				<p class="heading sav">sav</p>
+				<p class="bitot heading">bitotsav</p>
+				<!-- <p class="heading sav">sav</p> -->
 				<p class="heading year">2015</p>
 				<p class="sub-heading date">19th - 23rd March 2015</p>
 				</div>
@@ -89,8 +122,8 @@
 					<li class="front ontop">
 						<img src="images/nights/concert.jpg" alt="concert" class="bg-image" />
 						<div class="title">
-							<p class="heading move-up fade anim nig">nig</p>
-							<p class="heading move-up fade anim hts">hts</p>
+							<p class="heading move-up fade anim nig">nights</p>
+							<!-- <p class="heading move-up fade anim hts">hts</p> -->
 						</div>
 
 						<p class="desc move-right anim fade">Some random description 
@@ -120,7 +153,7 @@
 			</div>
 			</li>
 
-			<li id="lectures">
+			<!-- <li id="lectures">
 			<div class="page lectures">
 				<ul class="controls slide-controls">
 					<li id="prev"><i class="fa fa-angle-left fa-2x"></i></li>
@@ -130,11 +163,11 @@
 					<li class="front ontop">
 						<img src="images/lectures/lecture.jpg" alt="lecture" class="bg-image" />
 						<div class="title">
-							<p class="heading move-up fade anim gue">gue</p>
-							<p class="heading move-up fade anim st">st</p>
-							<p class="heading move-up fade anim lect">lect</p>
-							<p class="heading move-up fade anim ures">ures</p>
-						</div>
+							<p class="heading move-up fade anim gue">guest</p> -->
+							<!-- <p class="heading move-up fade anim st">st</p> -->
+							<!-- <p class="heading move-up fade anim lect">lectures</p> -->
+							<!-- <p class="heading move-up fade anim ures">ures</p> -->
+						<!-- </div>
 
 						<p class="desc move-right anim fade">Some random description 
 							about the given page. 
@@ -144,7 +177,7 @@
 					</li>
 				</ul>
 			</div>
-			</li>
+			</li> -->
 
 		</ul>
 
