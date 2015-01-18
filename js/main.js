@@ -16,7 +16,8 @@ $(document).ready(function(){
 		var reg = $('.reg');
 			var register = $('.register');
 
-		
+			hideReg();
+
 		//audio config
 			audio.volume = 0.4;
 			$('.play').on('click', function(){
@@ -151,7 +152,7 @@ $(document).ready(function(){
 
 		}
 
-		$(window).on('scroll',onScroll);
+		 $(window).on('scroll',onScroll);
 
 		function slidePage(dir){
 			
@@ -377,10 +378,16 @@ $(document).ready(function(){
 			
 			register.on('click', function(){
 				reg.css('display', 'block');
+				//$(window).off('scroll', onScroll);
 			})
 			$('.fa-close').on('click', function(){
-				reg.css('display', 'none');
+				hideReg();
 			})
+
+			function hideReg(){
+				reg.css('display', 'none');
+				//$(window).on('scroll', onScroll);
+			}
 
 
 });

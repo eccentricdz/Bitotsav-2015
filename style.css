@@ -516,14 +516,16 @@ right: 52px;
 }
 
 .reg{
-	position: fixed;
+	position:fixed;
 	top:0;
 	left: 0;
-	min-height: 100vh;
-	min-width: 100vw;
+	width: 100vw;
+	height: 100vh;
 	background: rgba(0,0,0,0.9);
 	z-index: 999;
 	display: none;
+	overflow-y: scroll;
+	overflow-x: hidden; 
 }
 
 form#register{
@@ -544,6 +546,21 @@ border-top: 1px solid rgb(150,150,150);
 border-bottom: 3px solid rgb(150,150,150);
 color: #fff;
 transition: all 0.2s linear;
+}
+
+input[type=radio]
+{
+	width: 10%;
+display: inline-block;
+margin-left: 115px;
+}
+
+
+input[type=radio]+span
+{
+font-size: 16pt;
+font-family: Roboto;
+color: rgb(150,150,150);
 }
 
 .input-wrapper{
