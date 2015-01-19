@@ -502,6 +502,11 @@ button:hover span{
 	transform:translateX(15px);
 }
 
+button#submit{
+	color: #1A4477;
+	border-color: #1A4477;
+}
+
 
 
 .register{
@@ -521,7 +526,7 @@ right: 52px;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0,0,0,0.9);
+	background: #EFEFEF;
 	z-index: 999;
 	display: none;
 	overflow-y: scroll;
@@ -542,9 +547,9 @@ font-size: 16pt;
 font-family: Roboto;
 background: transparent;
 border: none;
-border-top: 1px solid rgb(150,150,150);
-border-bottom: 3px solid rgb(150,150,150);
-color: #fff;
+border-top: 1px solid #1A4477;
+border-bottom: 3px solid #1A4477;
+	color: #0D233E;
 transition: all 0.2s linear;
 }
 
@@ -560,7 +565,7 @@ input[type=radio]+span
 {
 font-size: 16pt;
 font-family: Roboto;
-color: rgb(150,150,150);
+color: #1A4477;
 }
 
 .input-wrapper{
@@ -571,12 +576,12 @@ color: rgb(150,150,150);
 
 input:focus{
 	outline: none;
-	border-color: white;
+border-color:#0D233E;
 }
 
 label{
 	display: block;
-	color: rgb(150,150,150);
+	color: #1A4477;
 font-family: Roboto;
 width: 100%;
 position: absolute;
@@ -589,12 +594,12 @@ transition: all 0.2s linear;
 	position: fixed;
 	top: 30px;
 	right: 30px;
-	color: rgba(255,255,255,0.5);
+	color: #1A4477;
 	cursor: pointer;
 }
 
 .fa-close:hover{
-	color: white;
+	color: #0D233E;
 }
 
 #cat{
@@ -623,7 +628,7 @@ transition: all 0.2s linear;
 
 .event-cat li{
 	float: left;
-	width: 48%;
+	width: 47%;
 	padding: 12px 35px;
 	color: white;
 	border: 2px solid white;
@@ -632,6 +637,7 @@ transition: all 0.2s linear;
 	cursor: pointer;
 	display: block;
 		transition: all 0.2s linear;
+		border-radius: 30px;
 }
 
 .event-cat li:hover{
