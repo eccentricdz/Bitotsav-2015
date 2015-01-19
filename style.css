@@ -232,6 +232,12 @@ letter-spacing: 1px;
 	width: 100%;
 }
 
+.bg-image-fixed{
+	width: 100%;
+	z-index: -10;
+	position: absolute;
+}
+
 
 
 .intro{
