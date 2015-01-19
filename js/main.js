@@ -195,7 +195,7 @@ $(document).ready(function(){
 				$(el).replaceWith($(el).clone(true));
 			});
 
-			$('.fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
+			el.find('.fade').on('webkitAnimationEnd oanimationend mozAnimationEnd msAnimationEnd animationend', function(e){
 			$(this).css('opacity', '1');
 		});
 		}

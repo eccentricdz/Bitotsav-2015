@@ -254,7 +254,7 @@ letter-spacing: 1px;
 
 .sub{
 	/*color: 
-	#ffdf55;*/
+	#FFE066;*/
 	font-size: 15pt;
 }
 
@@ -276,6 +276,10 @@ letter-spacing: 1px;
 	font-family: nexa-b;
 	}
 
+.woman .heading{
+	font-size: 38pt;
+	letter-spacing: 10pt;
+}
 
 
 	.inside .heading{
@@ -312,7 +316,7 @@ border-top: 11px solid white;
 	font-family: nexa-b;
 font-size: 20pt;
 top: -10px;
-	color: #ffdf55;
+	color: #FFE066;
 }
 
 .bit{
@@ -369,15 +373,20 @@ padding-top: 30px;
 border-top: 10px solid white;
 }
 
+
 .desc{
 	font-family: Roboto;
 	font-weight: 300;
 	letter-spacing: 1px;
 font-size: 13pt;
-color: #FFDF55;
+color: #FFE066;
 width: 300px;
 margin-left: 10vw;
 margin-top: -100px;
+}
+
+.social .desc{
+	margin-top: -200px;
 }
 
 .lectures .heading{
@@ -553,8 +562,8 @@ font-size: 16pt;
 font-family: Roboto;
 background: transparent;
 border: none;
-border-top: 1px solid #1A4477;
-border-bottom: 3px solid #1A4477;
+border: 2px solid #1A4477;
+/*border-bottom: 3px solid #1A4477;*/
 	color: #0D233E;
 transition: all 0.2s linear;
 }
@@ -594,6 +603,7 @@ position: absolute;
 font-size: 11pt;
 top: 32%;
 transition: all 0.2s linear;
+padding-left: 20px;
 }
 
 .fa-close{
@@ -647,8 +657,8 @@ transition: all 0.2s linear;
 }
 
 .event-cat li:hover{
-	color: #FFDF55;
-	border-color: #FFDF55;
+	color: #FFE066;
+	border-color: #FFE066;
 }
 
 
