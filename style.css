@@ -37,6 +37,30 @@ body{
 		background: #1f1326;
 }
 
+a{
+	color: white;
+text-decoration: none;
+font-family: Roboto;
+text-transform: uppercase;
+z-index: 10;
+	display: block;
+}
+
+.forms .links{
+	color: #0D233E;
+	font-size: smaller;
+	margin-top: 15px;
+
+}
+
+.links:hover{
+	text-decoration: underline;
+}
+
+.links i{
+	padding-right: 15px;
+}
+
 .logo{
 	position: fixed;
 	top: 35px;
@@ -525,12 +549,21 @@ top: 35px;
 right: 52px;
 }
 
+#login{
+	position: fixed;
+top: 85px;
+right: 90px;
+font-size: smaller;
+}
+
+
+
 #submit{
 	display: block;
 	margin: 40px auto;
 }
 
-.reg{
+.forms{
 	position:fixed;
 	top:0;
 	left: 0;
@@ -541,9 +574,10 @@ right: 52px;
 	display: none;
 	overflow-y: scroll;
 	overflow-x: hidden; 
+	color: #0D233E;
 }
 
-form#register{
+form{
 	position: relative;
 	width: 50vw;
 	margin: 75px auto;
@@ -599,6 +633,16 @@ font-size: 11pt;
 top: 32%;
 transition: all 0.2s linear;
 padding-left: 20px;
+pointer-events: none;
+}
+
+.form-head{
+	color: #1A4477;
+	text-transform: uppercase;
+	font-family: nexa-b;
+	text-align: center;
+	margin-top: 20px;
+	font-size: larger;
 }
 
 .fa-close{

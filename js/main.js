@@ -13,10 +13,12 @@ $(document).ready(function(){
 		var audio = document.getElementById('bg-audio');
 		var songIndex = 1;
 
-		var reg = $('.reg');
+		var reg = $('#reg');
+		var log = $('#user-login');
+		var forms = $('.forms');
 			var register = $('.register');
 
-			hideReg();
+			hideForms();
 
 		//audio config
 			audio.volume = 0.4;
@@ -366,10 +368,13 @@ $(document).ready(function(){
 				
 			}
 
-			var login = $('.login');
-			login.on('click', function(e){
-				console.log('login');
-			})
+			function logIn(e){
+				e.preventDefault();
+				//console.log('login');
+			}
+
+			var login = $('#login');
+			login.on('click', logIn);
 
 			$('input').on('focus', function(e){
 				$(this).siblings('label').css('top','-55%');
@@ -380,12 +385,16 @@ $(document).ready(function(){
 				reg.css('display', 'block');
 				//$(window).off('scroll', onScroll);
 			})
+
+			$('#login').on('click', function(){
+				log.css('display', 'block');
+			})
 			$('.fa-close').on('click', function(){
-				hideReg();
+				hideForms();
 			})
 
-			function hideReg(){
-				reg.css('display', 'none');
+			function hideForms(){
+				forms.css('display', 'none');
 				//$(window).on('scroll', onScroll);
 			}
 
