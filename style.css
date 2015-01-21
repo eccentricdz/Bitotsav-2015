@@ -376,22 +376,17 @@ border-top: 10px solid white;
 
 .desc{
 	font-family: Roboto;
-	font-weight: 300;
-	letter-spacing: 1px;
+font-weight: 300;
+letter-spacing: 1px;
 font-size: 13pt;
 color: #FFE066;
 width: 300px;
-margin-left: 10vw;
-margin-top: -100px;
+position: absolute;
+/* margin-top: -100px; */
+top: 18vh;
+left: 70px;
 }
 
-.social .desc{
-	margin-top: -200px;
-}
-
-.lectures .heading{
-	font-size: 45pt;
-}
 
 .controls{
 	
