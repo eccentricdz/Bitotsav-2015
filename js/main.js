@@ -18,6 +18,7 @@ $(document).ready(function(){
 		var forms = $('.forms');
 			var register = $('.register');
 
+			var navLinkClicked = false;
 			hideForms();
 
 		//audio config
@@ -113,6 +114,7 @@ $(document).ready(function(){
 
 		pageLink.on('click', function(event) {
 			event.preventDefault();
+			navLinkClicked = true;
 			var nextPage = $(this).attr('id');
 
 			if(nextPage==currentPage)
@@ -120,17 +122,24 @@ $(document).ready(function(){
 			var currIndex = $('li#'+currentPage).index();
 			var nextIndex = $('li#'+nextPage).index();
 
-			console.log(nextPage+": "+nextIndex);
+			
 			var dir;
 			if(currIndex<nextIndex)
 				dir = 'next';
 			else
 				dir = 'prev';
-
+			console.log('sliding page from '+currentPage+' to '+nextPage+'('+(currIndex-nextIndex)+')');
 			var i;
+			$(window).off('scroll', onScroll);
 			for(i=0;i<Math.abs(currIndex-nextIndex); i++){
+				console.log(i+1);
 				slidePage(dir);
 			}
+			setTimeout(function(){
+			navLinkClicked = false;
+			$(window).on('scroll', onScroll);
+		}, 3000);
+			
 					});
 
 		var onScroll = function(event){
@@ -139,7 +148,7 @@ $(document).ready(function(){
 				// 		console.log('scroll not active');
 				// 		return;}
 
-		
+					console.log('window scrolled');
 					var st = $(window).scrollTop();
 					
 		   			if (st > lastScrollTop){
@@ -213,7 +222,9 @@ $(document).ready(function(){
 			 axis: 'y',
 			 easing: 'easeInSine', 
 			 complete: function(){
-		lastScrollTop = pos;
+			lastScrollTop = pos;
+			console.log('navLinkClicked '+navLinkClicked);
+			if(!navLinkClicked)
 			$(window).on('scroll',onScroll);
 			
 			if(dir=='next'&&currentPage=='nights')
