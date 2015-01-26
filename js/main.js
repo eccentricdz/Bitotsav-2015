@@ -1,4 +1,15 @@
 $(document).ready(function(){
+    $.getJSON('api/fb.php', function(data){
+        if(data['logged_in'] == 1){
+            $('#loginButton').attr('href', '#javascript');
+            $('#loginButton button').text('Hi ' + data['first_name']);
+            $('#login').show();
+        }else{
+            $('#loginButton').attr('href', data['login_url']);
+        }
+    });
+});
+$(document).ready(function(){
 
 		var lastScrollTop = 0;
 		var currentPage = "home";
@@ -385,21 +396,21 @@ $(document).ready(function(){
 			}
 
 			var login = $('#login');
-			login.on('click', logIn);
+//			login.on('click', logIn);
 
 			$('input').on('focus', function(e){
 				$(this).siblings('label').css('top','-55%');
 			})
 
 			
-			register.on('click', function(){
+/*			register.on('click', function(){
 				reg.css('display', 'block');
 				//$(window).off('scroll', onScroll);
-			})
+			})*/
 
-			$('#login').on('click', function(){
-				log.css('display', 'block');
-			})
+			// $('#login').on('click', function(){
+			// 	log.css('display', 'block');
+			// })
 			$('.fa-close').on('click', function(){
 				hideForms();
 			})
