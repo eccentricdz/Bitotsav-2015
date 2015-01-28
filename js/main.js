@@ -1,3 +1,65 @@
+function getRegisterFormData(){
+    var ret = {};
+    ret['tel'] = $('#tel').val();
+    ret['college'] = $('#college').val();
+    ret['city'] = $('#city').val();
+    ret['state'] = $('#state').val();
+    console.log(ret);
+    return ret;
+}
+$(document).ready(function(){
+    $.getJSON('api/fb.php', function(data){
+        if(data['logged_in'] == 1){
+            $('#loginButton').attr('href', 'javascript:return false;');
+            $('#loginButton button').text('Hi ' + data['first_name']);
+            $('#login').show();
+            $('#loginButton').click(function(){
+                $('#reg').css('display', 'block');
+            });
+            $('#register #submit').click(function(e){
+                $.post("api/register.php", getRegisterFormData()).done(function(data){
+                    data = JSON.parse(data);
+                    if(data['ok'] == 1){
+                        // OK
+                        $("#reg").css('display', 'none');
+                    }else{
+                        // Not OK
+                    }
+                });
+                return false;
+            });
+            try{
+                $('#tel + label').css('top', '-55%');
+                $('#city + label').css('top', '-55%');
+                $('#state + label').css('top', '-55%');
+                $('#college + label').css('top', '-55%');
+                $('#tel').val(data['phone']);
+                $('#city').val(data['city']);
+                $('#state').val(data['state']);
+                $('#college').val(data['college']);
+            }catch(e){
+                console.log(e);
+            }
+        }else{
+            $('#loginButton').attr('href', data['login_url']);
+        }
+    });
+    (function removeFacebookAppendedHash() {
+        if (!window.location.hash || window.location.hash !== '#_=_')
+            return;
+        if (window.history && window.history.replaceState)
+            return window.history.replaceState("", document.title, window.location.pathname);
+        // Prevent scrolling by storing the page's current scroll offset
+        var scroll = {
+            top: document.body.scrollTop,
+            left: document.body.scrollLeft
+        };
+        window.location.hash = "";
+        // Restore the scroll offset, should be flicker free
+        document.body.scrollTop = scroll.top;
+        document.body.scrollLeft = scroll.left;
+    }());
+});
 $(document).ready(function(){
 
 		var lastScrollTop = 0;
@@ -385,21 +447,21 @@ $(document).ready(function(){
 			}
 
 			var login = $('#login');
-			login.on('click', logIn);
+//			login.on('click', logIn);
 
 			$('input').on('focus', function(e){
 				$(this).siblings('label').css('top','-55%');
 			})
 
 			
-			register.on('click', function(){
+/*			register.on('click', function(){
 				reg.css('display', 'block');
 				//$(window).off('scroll', onScroll);
-			})
+			})*/
 
-			$('#login').on('click', function(){
-				log.css('display', 'block');
-			})
+			// $('#login').on('click', function(){
+			// 	log.css('display', 'block');
+			// })
 			$('.fa-close').on('click', function(){
 				hideForms();
 			})
