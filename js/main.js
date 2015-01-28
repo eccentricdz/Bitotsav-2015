@@ -409,13 +409,18 @@ $(document).ready(function(){
 				$('.ontop .fade').css('opacity', '0');
 				if(dir=='next'){
 				var nextontop = ontop.next();
+
 				if(nextontop.length==0)
 					nextontop = ontop.prevAll().last();
+
+				console.log('next : '+nextontop.attr('id'));
 								}
 			else{
 				nextontop = ontop.prev();
 				if(nextontop.length==0)
 					nextontop = ontop.nextAll().last();
+
+				console.log('prev : '+nextontop.attr('id'));
 				}
 
 				ontop.removeClass('ontop');
