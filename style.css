@@ -293,6 +293,7 @@ letter-spacing: 1px;
 
 .heading{
 	font-size: 60pt;
+	width:600px ;
 	margin: 25px 0;
 	letter-spacing: 20pt;
 	color: white;
