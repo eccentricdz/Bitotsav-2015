@@ -33,7 +33,7 @@ $(document).ready(function(){
     renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
 });
 $(document).ready(function(){
-    $.getJSON('api/fb.php', function(data){
+    $.getJSON('api/fb.php?format=json', function(data){
         if(data['logged_in'] == 1){
             $('#loginButton').attr('href', 'javascript:return false;');
             $('#loginButton button').text('Hi ' + data['first_name']);
