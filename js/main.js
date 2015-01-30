@@ -29,9 +29,9 @@ function renderTemplate(template, variables, target){
         $(curTemp).appendTo(target);
     }
 }
-$(document).ready(function(){
-    renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
-});
+// $(document).ready(function(){
+//     renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
+// });
 $(document).ready(function(){
     $.getJSON('api/fb.php', function(data){
         if(data['logged_in'] == 1){
@@ -494,6 +494,14 @@ $(document).ready(function(){
 			// })
 			$('.fa-close').on('click', function(){
 				hideForms();
+			})
+
+			$('.details-box .fa-close').on('click', function(){
+				$(this).parent().css('display', 'none');
+			})
+
+			$('button.details').on('click', function(){
+				$(this).parent().siblings('.details-box').css('display', 'block');
 			})
 
 			function hideForms(){
