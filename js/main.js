@@ -17,7 +17,6 @@ function getRegisterFormData(){
     ret['college'] = $('#college').val();
     ret['city'] = $('#city').val();
     ret['state'] = $('#state').val();
-    console.log(ret);
     return ret;
 }
 function renderTemplate(template, variables, target){
@@ -29,46 +28,45 @@ function renderTemplate(template, variables, target){
         $(curTemp).appendTo(target);
     }
 }
-$(document).ready(function(){
-    renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
+renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
+$.getJSON('api/fb.php?format=json', function(data){
+    if(data['logged_in'] == 1){
+        $('#loginButton').attr('href', 'javascript:return false;');
+        $('#loginButton button').text('Hi ' + data['first_name']);
+        $('#login').show();
+        $('#loginButton').click(function(){
+            $('#reg').css('display', 'block');
+        });
+        $('#register #submit').click(function(e){
+            $.post("api/register.php", getRegisterFormData()).done(function(data){
+                data = JSON.parse(data);
+                console.log(data);
+                if(data['ok'] == 1){
+                    // OK
+                    $("#reg").css('display', 'none');
+                }else{
+                    // Not OK
+                }
+            });
+            return false;
+        });
+        try{
+            $('#tel + label').css('top', '-55%');
+            $('#city + label').css('top', '-55%');
+            $('#state + label').css('top', '-55%');
+            $('#college + label').css('top', '-55%');
+            $('#tel').val(data['phone']);
+            $('#city').val(data['city']);
+            $('#state').val(data['state']);
+            $('#college').val(data['college']);
+        }catch(e){
+            console.log(e);
+        }
+    }else{
+        $('#loginButton').attr('href', data['login_url']);
+    }
 });
 $(document).ready(function(){
-    $.getJSON('api/fb.php?format=json', function(data){
-        if(data['logged_in'] == 1){
-            $('#loginButton').attr('href', 'javascript:return false;');
-            $('#loginButton button').text('Hi ' + data['first_name']);
-            $('#login').show();
-            $('#loginButton').click(function(){
-                $('#reg').css('display', 'block');
-            });
-            $('#register #submit').click(function(e){
-                $.post("api/register.php", getRegisterFormData()).done(function(data){
-                    data = JSON.parse(data);
-                    if(data['ok'] == 1){
-                        // OK
-                        $("#reg").css('display', 'none');
-                    }else{
-                        // Not OK
-                    }
-                });
-                return false;
-            });
-            try{
-                $('#tel + label').css('top', '-55%');
-                $('#city + label').css('top', '-55%');
-                $('#state + label').css('top', '-55%');
-                $('#college + label').css('top', '-55%');
-                $('#tel').val(data['phone']);
-                $('#city').val(data['city']);
-                $('#state').val(data['state']);
-                $('#college').val(data['college']);
-            }catch(e){
-                console.log(e);
-            }
-        }else{
-            $('#loginButton').attr('href', data['login_url']);
-        }
-    });
     (function removeFacebookAppendedHash() {
         if (!window.location.hash || window.location.hash !== '#_=_')
             return;
