@@ -701,6 +701,60 @@ pointer-events: none;
 	border-color: #FFE066;
 }
 
+.details-box{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+		background: rgba(31,19,38,0.8);
+		z-index: 100;
+		padding: 50px;
+		overflow: scroll;
+		color: #FFE066;
+		display: none;
+}
+
+.details-box h1,h2{
+	margin: 15px 0;
+	color: #FFE066;
+	text-transform: uppercase;
+}
+
+.details-box p{
+	color:white;
+	width: 80vw;
+}
+
+.details-box ol{
+	width: 80vw;
+	position: relative;
+	display: inline-block;
+	color: white;
+}
+
+.details-box li{
+	width: 100%;
+}
+
+.details-box button{
+	margin: 90px 135px;
+	display: inline-block;
+}
+
+.details-pdf{
+	display: inline-block;
+}
+
+.details-box .fa-close{
+	position: absolute;
+	top: 30px;
+	right: 150px;
+	color: #FFE066;
+}
+.details-box .fa-close:hover{
+	color: white;
+}
 
 .sub-heading.anim{
 	-webkit-animation-delay: 0.5s;

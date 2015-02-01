@@ -28,25 +28,29 @@ function renderTemplate(template, variables, target){
         $(curTemp).appendTo(target);
     }
 }
-renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
-$.getJSON('api/fb.php?format=json', function(data){
-    if(data['logged_in'] == 1){
-        $('#loginButton').attr('href', 'javascript:return false;');
-        $('#loginButton button').text('Hi ' + data['first_name']);
-        $('#login').show();
-        $('#loginButton').click(function(){
-            $('#reg').css('display', 'block');
-        });
-        $('#register #submit').click(function(e){
-            $.post("api/register.php", getRegisterFormData()).done(function(data){
-                data = JSON.parse(data);
-                console.log(data);
-                if(data['ok'] == 1){
-                    // OK
-                    $("#reg").css('display', 'none');
-                }else{
-                    // Not OK
-                }
+// $(document).ready(function(){
+//     renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
+// });
+$(document).ready(function(){
+    $.getJSON('api/fb.php', function(data){
+        if(data['logged_in'] == 1){
+            $('#loginButton').attr('href', 'javascript:return false;');
+            $('#loginButton button').text('Hi ' + data['first_name']);
+            $('#login').show();
+            $('#loginButton').click(function(){
+                $('#reg').css('display', 'block');
+            });
+            $('#register #submit').click(function(e){
+                $.post("api/register.php", getRegisterFormData()).done(function(data){
+                    data = JSON.parse(data);
+                    if(data['ok'] == 1){
+                        // OK
+                        $("#reg").css('display', 'none');
+                    }else{
+                        // Not OK
+                    }
+                });
+                return false;
             });
             return false;
         });
@@ -492,6 +496,14 @@ $(document).ready(function(){
 			// })
 			$('.fa-close').on('click', function(){
 				hideForms();
+			})
+
+			$('.details-box .fa-close').on('click', function(){
+				$(this).parent().css('display', 'none');
+			})
+
+			$('button.details').on('click', function(){
+				$(this).parent().siblings('.details-box').css('display', 'block');
 			})
 
 			function hideForms(){
