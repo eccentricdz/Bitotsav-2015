@@ -351,16 +351,16 @@ $(document).ready(function(){
 
 			var slide = $('.slides>li');
 
-			slide.on('mousedown', function(event){
+			$('.slides').delegate('.slide','mousedown', function(event){
 				event.stopPropagation();
-				console.log('mouse down on '+event.target);
+				console.log('mouse down on '+$(this).attr('class'));
 				isMouseDown = true;
 				mouseDownX = event.clientX;
 				mouseDownY = event.clientY;
 				//lastSlideLeft = $(this).parent().css('left');
 			})
 
-			slide.on('mouseup', function(event){
+			$('.slides').delegate('.slide','mouseup', function(event){
 				event.stopPropagation();
 				console.log('mouse down off '+event.target);
 
@@ -392,11 +392,11 @@ $(document).ready(function(){
 			}
 
 				slideChange($(this).parent(), dir);
-				//$(this).parent().css('margin-left', 0);
+				//$(this).css('margin-left', 0);
 			});
 
 
-			slide.on('mousemove', function(event){
+			$('.slides').delegate('.slide','mousemove', function(event){
 				event.stopPropagation();
 				var mouseMoveX = event.clientX;
 
