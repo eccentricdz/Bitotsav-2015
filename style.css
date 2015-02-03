@@ -37,6 +37,8 @@ body{
 		background: url('images/blackorchid.png') repeat;
 }
 
+
+
 a{
 	color: white;
 text-decoration: none;
@@ -44,6 +46,44 @@ font-family: Roboto;
 text-transform: uppercase;
 z-index: 10;
 	display: block;
+}
+
+#preload-cover{
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: url('images/blackorchid.png') repeat;
+	color: white;
+text-transform: uppercase;
+}
+
+#preload-cover center{
+	top: 32vh;
+position: relative;
+}
+
+#preload-cover #bitotsav{
+	font-family: nexa-l;
+}
+
+#preload-cover img{
+	padding-bottom: 2px;
+}
+
+#preload-cover #year{
+	font-family: nexa-b;
+	font-size: 2.2em;
+}
+
+#loading-bar{
+	position: absolute;
+	height: 1px;
+	background-color: rgba(70,70,70,0.8);
+	top: 70vh;
+	transition: all 0.1s linear;
 }
 
 .forms .links{

@@ -15,8 +15,18 @@
 
 <body>
 
+	<div id="preload-cover">
+		<CENTER>
+			<img src="images/bitotsav.png" alt="bitotsav logo" class="revolve"/>
+			<p id="bitotsav">bitotsav</p>
+			<p id="year">2015</p>
+		</CENTER>
+
+		<div id="loading-bar"></div>
+	</div>
+
 	<img src="images/bitotsav.png" alt="bitotsav logo" class="logo revolve" />
-	<audio id="bg-audio" preload autoplay>
+	<audio id="bg-audio" preload>
 		<source src="audio/Smooth-ride-lounge-ambient-track.mp3" type="audio/mpeg">
 		<source src="audio/Smooth-ride-lounge-ambient-track.ogg" type="audio/ogg">
 	</audio>
@@ -361,10 +371,13 @@ Terms and Conditions of the competition before registering.</li>
 	$.html5Loader({
 		filesToLoad : 'files.json',
 		onComplete : function(){
-			alert('files loaded!');
+			$('#preload-cover').velocity('fadeOut', {duration : 500});
+			//alert('files loaded!');
 		},
 		onUpdate : function(percentage){
-			console.log(percentage+' % loaded..');
+			var loadingBar = $('#loading-bar');
+			loadingBar.css('width', percentage+'vw');
+			// console.log(percentage+' % loaded..');
 		},
 	});
 </script>
