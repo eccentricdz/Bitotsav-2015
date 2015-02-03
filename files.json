@@ -1,0 +1,97 @@
+{
+  "files": [
+    {
+      "type": "IMAGE",
+      "source": "images/national/national.jpg",
+      "size": 102000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/national/nukkad.jpg",
+      "size": 51900
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/national/e-boot.jpg",
+      "size": 63000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/national/street.jpg",
+      "size": 252000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/national/street.jpg",
+      "size": 82800
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/national/band.jpg",
+      "size": 59400
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/social/clean.jpg",
+      "size": 54800
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/social/compassion.jpg",
+      "size": 58400
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/social/woman.jpg",
+      "size": 69600
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/nights/concert.jpg",
+      "size": 74300
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/home/blue.jpg",
+      "size": 72900
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/home/flowers.jpg",
+      "size": 129000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/home/food.jpg",
+      "size": 101000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/home/taxi.jpg",
+      "size": 111000
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/home/cricket.jpg",
+      "size": 54900
+    },
+    {
+      "type": "IMAGE",
+      "source": "images/events/brain.jpg",
+      "size": 97900
+    },
+    {
+      "type": "AUDIO",
+      "sources" : {
+        "mp3":{
+          "source" : "audio/Smooth-ride-lounge-ambient-track.mp3",
+          "size" : 5620000
+        },
+        "ogg" : {
+        "source" : "audio/Smooth-ride-lounge-ambient-track.ogg",
+        "size" : 2820000
+        }
+        }
+      }
+  ]
+}

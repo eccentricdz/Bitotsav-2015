@@ -34,7 +34,7 @@ ul{
 
 body{
 		font-family: Roboto;
-		background: #1f1326;
+		background: url('images/blackorchid.png') repeat;
 }
 
 a{
@@ -112,7 +112,7 @@ z-index: 10;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #1f1326;
+	background: url('images/blackorchid-purple.png') repeat;
 	box-shadow: inset -2px -2px 8px 1px rgba(0,0,0,0.3);
 	overflow: hidden;
 }
