@@ -1,6 +1,18 @@
 {
   "files": [
     {
+      "type": "SCRIPT",
+      "source": "js/velocity.min.js",
+      "size": 33500,
+      "stopExecution": false
+    },
+      {
+      "type": "SCRIPT",
+      "source": "js/main.js",
+      "size": 15300,
+      "stopExecution": true
+    },
+    {
       "type": "IMAGE",
       "source": "images/national/national.jpg",
       "size": 102000
@@ -82,16 +94,16 @@
     },
     {
       "type": "AUDIO",
-      "sources" : {
-        "mp3":{
-          "source" : "audio/Smooth-ride-lounge-ambient-track.mp3",
-          "size" : 5620000
+      "sources": {
+        "mp3": {
+          "source": "audio/Smooth-ride-lounge-ambient-track.mp3",
+          "size": 5620000
         },
-        "ogg" : {
-        "source" : "audio/Smooth-ride-lounge-ambient-track.ogg",
-        "size" : 2820000
-        }
+        "ogg": {
+          "source": "audio/Smooth-ride-lounge-ambient-track.ogg",
+          "size": 2820000
         }
       }
+    }
   ]
 }
