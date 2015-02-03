@@ -32,6 +32,9 @@ function renderTemplate(template, variables, target){
 // $(document).ready(function(){
 //     renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
 // });
+
+
+	
 $(document).ready(function(){
     $.getJSON('api/fb.php', function(data){
         if(data['logged_in'] == 1){
