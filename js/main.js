@@ -34,7 +34,7 @@ function renderTemplate(template, variables, target){
 // });
 
 
-	
+
 $(document).ready(function(){
     $.getJSON('api/fb.php', function(data){
         if(data['logged_in'] == 1){
@@ -411,16 +411,20 @@ $(document).ready(function(){
 				else if(diff<0)
 					dir = 'next';
 				// 	lastMarginLeft = diff;
-				// 	if(((dir=='prev'&&$(this).index()==0)||((dir=='next')&&$(this).next().length==0))&&(diff>250))
-				// 	{
-				// 		$(this).parent().animate({
-				// 	marginLeft: 0,
-				// 	},
-				// 	200, function() {
-				// 	/* stuff to do after animation is complete */return false;
-				// });
+					if(((dir=='prev'&&$(this).index()==0)||((dir=='next')&&$(this).next().length==0))&&(Math.abs(diff)>250))
+					{
 						
-				// 	}
+						$(this).parent().velocity({
+					marginLeft: 0,
+					},
+					{duration : 200,
+					});
+
+						
+						isMouseDown = false;
+						return false;
+						
+					}
 
 
 					$(this).parent().css('margin-left', diff+'px');
