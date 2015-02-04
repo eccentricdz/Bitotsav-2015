@@ -45,6 +45,7 @@ $.getJSON('api/fb.php?format=json', function(data){
                 }else{
                     // Not OK
                 }
+                return false;
             });
             return false;
         });
@@ -347,16 +348,16 @@ $(document).ready(function(){
 
 			var slide = $('.slides>li');
 
-			slide.on('mousedown', function(event){
+			$('.slides').delegate('.slide','mousedown', function(event){
 				event.stopPropagation();
-				console.log('mouse down on '+event.target);
+				console.log('mouse down on '+$(this).attr('class'));
 				isMouseDown = true;
 				mouseDownX = event.clientX;
 				mouseDownY = event.clientY;
 				//lastSlideLeft = $(this).parent().css('left');
 			})
 
-			slide.on('mouseup', function(event){
+			$('.slides').delegate('.slide','mouseup', function(event){
 				event.stopPropagation();
 				console.log('mouse down off '+event.target);
 
@@ -388,11 +389,11 @@ $(document).ready(function(){
 			}
 
 				slideChange($(this).parent(), dir);
-				//$(this).parent().css('margin-left', 0);
+				//$(this).css('margin-left', 0);
 			});
 
 
-			slide.on('mousemove', function(event){
+			$('.slides').delegate('.slide','mousemove', function(event){
 				event.stopPropagation();
 				var mouseMoveX = event.clientX;
 
@@ -404,16 +405,20 @@ $(document).ready(function(){
 				else if(diff<0)
 					dir = 'next';
 				// 	lastMarginLeft = diff;
-				// 	if(((dir=='prev'&&$(this).index()==0)||((dir=='next')&&$(this).next().length==0))&&(diff>250))
-				// 	{
-				// 		$(this).parent().animate({
-				// 	marginLeft: 0,
-				// 	},
-				// 	200, function() {
-				// 	/* stuff to do after animation is complete */return false;
-				// });
+					if(((dir=='prev'&&$(this).index()==0)||((dir=='next')&&$(this).next().length==0))&&(Math.abs(diff)>250))
+					{
 						
-				// 	}
+						$(this).parent().velocity({
+					marginLeft: 0,
+					},
+					{duration : 200,
+					});
+
+						
+						isMouseDown = false;
+						return false;
+						
+					}
 
 
 					$(this).parent().css('margin-left', diff+'px');

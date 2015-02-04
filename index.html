@@ -7,14 +7,25 @@
 <link rel="stylesheet" href="style.css"  />
 <script src="js/jquery-2.1.3.min.js"></script>
 <script src="js/prefixfree.min.js"></script>
+<script src="js/jquery.html5Loader.js"></script>
 <script src="js/velocity.min.js"></script>
 <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css" />
 </head>
 
 <body>
 
+	<div id="preload-cover">
+		<CENTER>
+			<img src="images/bitotsav.png" alt="bitotsav logo" class="revolve"/>
+			<p id="bitotsav">bitotsav</p>
+			<p id="year">2015</p>
+		</CENTER>
+
+		<div id="loading-bar"></div>
+	</div>
+
 	<img src="images/bitotsav.png" alt="bitotsav logo" class="logo revolve" />
-	<audio id="bg-audio" preload>
+	<audio id="bg-audio" preload autoplay>
 		<source src="audio/Smooth-ride-lounge-ambient-track.mp3" type="audio/mpeg">
 		<source src="audio/Smooth-ride-lounge-ambient-track.ogg" type="audio/ogg">
 	</audio>
@@ -140,7 +151,7 @@
                     </ul>-->
 
 				<ul class="slides">
-					<li class="front ontop" id="nights-front" >
+					<li class="front ontop slide" id="nights-front" >
 						<img src="images/nights/concert.jpg" alt="concert" class="bg-image" />
 						<div class="title">
 							<p class="heading move-up fade anim nig">nights</p>
@@ -180,7 +191,7 @@
                     </ul>
 				<ul class="slides">
 
-					<li class="ontop front" id="national">
+					<li class="ontop front slide" id="national">
 						<img src="images/national/national.jpg" alt="national" class="bg-image" />
 						<div class="title">
 							<p class="heading move-up fade anim gue">flagship</p>
@@ -193,7 +204,6 @@
                 </ul>
             </div>
             </li>
-			
 			<li id="events">
 			<div class="page events">
 				<!--<ul class="controls slide-controls">
@@ -202,7 +212,7 @@
                     </ul>-->
 				<img src="images/events/brain.jpg" alt="brain" class="bg-image-fixed" />
 				<ul class="slides">
-					<li class="front ontop" id="events-front">
+					<li class="front ontop slide" id="events-front">
 						<!-- <img src="images/events/brain.jpg" alt="brain" class="bg-image" /> -->
 						<div class="title">
 							<p class="heading move-up fade anim">Events</p>
@@ -236,7 +246,7 @@
 				</ul>
 				<ul class="slides">
 
-					<li class="front ontop" id="social-front">
+					<li class="front slide ontop" id="social-front">
 						<img src="images/social/compassion.jpg" alt="social" class="bg-image" />
 						<div class="title">
 							<p class="heading move-up fade anim">social</p>
@@ -247,7 +257,7 @@
 						</p>
 					</li>
 
-					<li class="woman" id="woman">
+					<li class="woman slide" id="woman">
 						<img src="images/social/woman.jpg" alt="woman" class="bg-image" />
 						<div class="title">
 							<p class="heading move-up fade anim">woman</p>
@@ -271,7 +281,7 @@
 						</p>
 					</li>
 
-					<li class="clean" id="clean">
+					<li class="clean slide" id="clean">
 						<img src="images/social/clean.jpg" alt="clean" class="bg-image" />
 						<div class="title">
 							<p class="heading move-up fade anim">swachh</p>
@@ -299,4 +309,18 @@
 	</ul>
     <script src="js/main.js"></script>
 </body>
+<script>
+	$.html5Loader({
+		filesToLoad : 'files.json',
+		onComplete : function(){
+			$('#preload-cover').velocity('fadeOut', {duration : 500});
+			//alert('files loaded!');
+		},
+		onUpdate : function(percentage){
+			var loadingBar = $('#loading-bar');
+			loadingBar.css('width', percentage+'vw');
+			// console.log(percentage+' % loaded..');
+		},
+	});
+</script>
 </html>
