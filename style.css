@@ -750,7 +750,7 @@ pointer-events: none;
 		background: rgba(31,19,38,0.8);
 		z-index: 100;
 		padding: 50px;
-		overflow: scroll;
+		overflow-y: scroll;
 		color: #FFE066;
 		display: none;
 }
