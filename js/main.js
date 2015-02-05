@@ -1,15 +1,4 @@
-var flagshipTemplate ='<li class="inside $ID" id="$ID"><img src="$IMG" alt="$ID" class="bg-image" /><div class="title"><p class="heading move-up fade anim">$TITLE</p><a class="details-doc" target="_blank" href="$DETAILS"><button class="details move-up fade anim"><i class="fa fa-file-text-o"></i><span>Get the details</span></button></a></div><p class="desc move-right anim fade">$DESCRIP</p></li>';
-
-var flagshipEvents = [
-    {'ID': 'e-boot', 'TITLE': 'E-boot Camp \'15', 'DETAILS': 'details/e-boot/e-boot.pdf',
-    'DESCRIP': 'E-boot Camp provides the platform for young and budding entrepreneurs to improvise and fund their start-up. An opportunity for entrepreneurs from across India to compete and win prize money worth Rs. 50,000!', 'IMG': 'images/national/e-boot.jpg'},
-    {'ID': 'band', 'TITLE': 'Battle of the Bands', 'DETAILS': 'details/band/band.pdf',
-    'DESCRIP': 'Music washes away the dust from the soul of everyday life and when it comes to western music, there is nothing more to be told. BITOTSAV’15 awaits to enrapture you with the best of western rock cusped by your idols . Pull up your gears, put up your favourite tees because this time it is going to be invigorating. With so many bands battling for the top spot , be sure of witnessing the best of them and shaking to your favourite tunes. Without music life would be a mistake and the BATTLE OF BANDS has always been a testimony of BITOTSAV’s ability to rock the world.', 'IMG': 'images/national/band.jpg'},
-    {'ID': 'street', 'TITLE': 'Street Dance', 'DETAILS': 'details/street/street.pdf',
-    'DESCRIP': 'The streets are supposed to be about different people coming together. Street dance is about bringing something new to the floor and the best part of the streets is not about what you got, it\'s what you make of what you\'ve got. Street dance at Bitotsav is an all India level street dance competition and is one of the most anticipated events of the day.', 'IMG': 'images/national/street.jpg'},
-    {'ID': 'talkies', 'TITLE': 'Talkies', 'DETAILS': 'details/talkies/talkies.pdf',
-    'DESCRIP': '“Our deepest secret is not that we are inadequate, rather, adequate beyond measure.” Use your talent to organize the reticent master within you and seek yourself to adulation. Captivate and enthrall us in a given time frame, i.e., 8-15 min. <a href="https://www.facebook.com/internationalschooloffilmandmedia" target="_blank">AISFM</a> presents Talkies - A Short film making competition.', 'IMG': 'images/national/talkies.jpg'},
-];
+var flagshipTemplate ='<li class="$eventID inside" id="$eventID"><img src="$eventImage" alt="$eventID" class="bg-image" /><div class="title"><p class="heading move-up fade anim gue">$eventName</p><button class="details move-up fade anim"><i class="fa fa-file-text-o"></i><span>Get the details</span></button></div><p class="desc move-right anim fade">$eventShortDescription</p><div class="details-box" id="e-boot"><i class="fa fa-close fa-2x"></i>$eventDescription<a class="details-pdf" target="_blank" href="$eventDetails"><button class="pdf"><i class="fa fa-file-text-o"></i><span>Get the PDF</span></button></a><!--<button class="event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button>--></div></li>';
 
 function getRegisterFormData(){
     var ret = {};
@@ -24,54 +13,59 @@ function renderTemplate(template, variables, target){
     for(var i = 0;i<variables.length;i++){
         var curTemp = template;
         for(var k in variables[i]){
+            console.log(k);
             curTemp = curTemp.replace(new RegExp('\\$'+k, 'g'), variables[i][k]);
         }
         $(curTemp).appendTo(target);
     }
 }
-// $(document).ready(function(){
-//     renderTemplate(flagshipTemplate, flagshipEvents, '#national .slides');
-// });
-
-
-
-$(document).ready(function(){
-    $.getJSON('api/fb.php', function(data){
-        if(data['logged_in'] == 1){
-            $('#loginButton').attr('href', 'javascript:return false;');
-            $('#loginButton button').text('Hi ' + data['first_name']);
-            $('#login').show();
-            $('#loginButton').click(function(){
-                $('#reg').css('display', 'block');
-            });
-            $('#register #submit').click(function(e){
-                $.post("api/register.php", getRegisterFormData()).done(function(data){
-                    data = JSON.parse(data);
-                    if(data['ok'] == 1){
-                        // OK
-                        $("#reg").css('display', 'none');
-                    }else{
-                        // Not OK
-                    }
-                });
+$.getJSON('api/categories.php', function(data){
+    renderTemplate(flagshipTemplate, data['flagship'], '#national .slides');
+    $('.details-box .fa-close').on('click', function(){
+        $(this).parent().css('display', 'none');
+    });
+    $('button.details').on('click', function(){
+        $(this).parent().siblings('.details-box').css('display', 'block');
+    });
+});
+$.getJSON('api/fb.php?format=json', function(data){
+    if(data['logged_in'] == 1){
+        $('#loginButton').attr('href', 'javascript:return false;');
+        $('#loginButton button').text('Hi ' + data['first_name']);
+        $('#login').show();
+        $('#loginButton').click(function(){
+            $('#reg').css('display', 'block');
+        });
+        $('#register #submit').click(function(e){
+            $.post("api/register.php", getRegisterFormData()).done(function(data){
+                data = JSON.parse(data);
+                if(data['ok'] == 1){
+                    // OK
+                    $("#reg").css('display', 'none');
+                }else{
+                    // Not OK
+                }
                 return false;
             });
-            try{
-                $('#tel + label').css('top', '-55%');
-                $('#city + label').css('top', '-55%');
-                $('#state + label').css('top', '-55%');
-                $('#college + label').css('top', '-55%');
-                $('#tel').val(data['phone']);
-                $('#city').val(data['city']);
-                $('#state').val(data['state']);
-                $('#college').val(data['college']);
-            }catch(e){
-                console.log(e);
-            }
-        }else{
-            $('#loginButton').attr('href', data['login_url']);
+            return false;
+        });
+        try{
+            $('#tel + label').css('top', '-55%');
+            $('#city + label').css('top', '-55%');
+            $('#state + label').css('top', '-55%');
+            $('#college + label').css('top', '-55%');
+            $('#tel').val(data['phone']);
+            $('#city').val(data['city']);
+            $('#state').val(data['state']);
+            $('#college').val(data['college']);
+        }catch(e){
+            console.log(e);
         }
-    });
+    }else{
+        $('#loginButton').attr('href', data['login_url']);
+    }
+});
+$(document).ready(function(){
     (function removeFacebookAppendedHash() {
         if (!window.location.hash || window.location.hash !== '#_=_')
             return;
@@ -501,14 +495,6 @@ $(document).ready(function(){
 			// })
 			$('.fa-close').on('click', function(){
 				hideForms();
-			})
-
-			$('.details-box .fa-close').on('click', function(){
-				$(this).parent().css('display', 'none');
-			})
-
-			$('button.details').on('click', function(){
-				$(this).parent().siblings('.details-box').css('display', 'block');
 			})
 
 			function hideForms(){
