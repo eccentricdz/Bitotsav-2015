@@ -214,38 +214,45 @@ letter-spacing: 1px;
 	animation-delay: 0s;
 }
 .nav-link:nth-child(2) .name-link{
+	-webkit-animation-delay: .05s;
+	-moz-animation-delay: .05s;
+	-o-animation-delay: .05s;
+	animation-delay: .05s;
+}
+
+.nav-link:nth-child(3) .name-link{
 	-webkit-animation-delay: .1s;
 	-moz-animation-delay: .1s;
 	-o-animation-delay: .1s;
 	animation-delay: .1s;
 }
 
-.nav-link:nth-child(3) .name-link{
+.nav-link:nth-child(4) .name-link{
+	-webkit-animation-delay: .15s;
+	-moz-animation-delay: .15s;
+	-o-animation-delay: .15s;
+	animation-delay: .15s;
+}
+
+.nav-link:nth-child(5) .name-link{
 	-webkit-animation-delay: .2s;
 	-moz-animation-delay: .2s;
 	-o-animation-delay: .2s;
 	animation-delay: .2s;
 }
 
-.nav-link:nth-child(4) .name-link{
+.nav-link:nth-child(6) .name-link{
+	-webkit-animation-delay: .25s;
+	-moz-animation-delay: .25s;
+	-o-animation-delay: .25s;
+	animation-delay: .25s;
+}
+
+.nav-link:nth-child(7) .name-link{
 	-webkit-animation-delay: .3s;
 	-moz-animation-delay: .3s;
 	-o-animation-delay: .3s;
 	animation-delay: .3s;
-}
-
-.nav-link:nth-child(5) .name-link{
-	-webkit-animation-delay: .4s;
-	-moz-animation-delay: .4s;
-	-o-animation-delay: .4s;
-	animation-delay: .4s;
-}
-
-.nav-link:nth-child(6) .name-link{
-	-webkit-animation-delay: .5s;
-	-moz-animation-delay: .5s;
-	-o-animation-delay: .5s;
-	animation-delay: .5s;
 }
 
 
@@ -796,6 +803,51 @@ pointer-events: none;
 	color: white;
 }
 
+#contact-them{
+	position: relative;
+	width: 50%;
+	margin: 150px auto;
+	list-style-type: none;
+	color: #bbb;
+}
+
+#contact-them>li
+{
+
+}
+
+
+#contact-them>li>div{
+	display: inline-block;
+}
+
+.contact-img{
+width: 150px;
+height: 150px;
+overflow: hidden;
+border-radius: 50%;
+margin-right: 50px;
+}
+
+.contact-details{
+	height: 150px;
+position: relative;
+top: -30px;
+font-size: 1.1em;
+}
+
+#position{
+	margin-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+#arvind{
+	background:url(images/contact/arvind.jpg) no-repeat center center;
+}
+
+#ankur{
+	background:url(images/contact/ankur.jpg) no-repeat center center;
+}
 .sub-heading.anim{
 	-webkit-animation-delay: 0.5s;
 	-moz-animation-delay: 0.5s;
