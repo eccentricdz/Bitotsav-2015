@@ -127,6 +127,7 @@ $(document).ready(function(){
 
 			$('#forward').on('click', function(){
 				changeSong('next');
+				//alertify('thats all folks!', false);
 			})
 
 			$('#backward').on('click', function(){
@@ -138,6 +139,35 @@ $(document).ready(function(){
 				console.log(dir+' song');
 			}
 		//audio config ends
+
+		function alertify(msg, success)
+		{
+			var alertBox = $('#alert');
+			if(success)
+			{
+				alertBox.css('background', 'green');
+			}
+			else
+			{
+				alertBox.css('background', 'red');
+			}
+
+			alertBox.text(msg);
+			alertBox.velocity({
+				top:0
+			},
+			{
+				duration : 1000
+			}).velocity({
+				top: '-35px'
+			},
+			{
+				duration : 1000,
+				delay: 2000
+			});
+		};
+
+
 
 		bg.find('li:not(".current-bg")').velocity('fadeOut', {duration: 'slow'});
 

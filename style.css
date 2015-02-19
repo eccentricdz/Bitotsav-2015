@@ -48,6 +48,15 @@ z-index: 10;
 	display: block;
 }
 
+#alert{
+	text-align: center;
+	color: white;
+	padding: 7px 0;
+	background-color: red;
+	position: fixed;
+	top: -35px;
+	width: 100vw;
+}
 #preload-cover{
 	z-index: 999;
 	position: fixed;
