@@ -9,6 +9,33 @@ function getRegisterFormData(){
     console.log(ret);
     return ret;
 }
+function alertify(msg, success)
+{
+    var alertBox = $('#alert');
+    if(success)
+    {
+        alertBox.css('background', 'green');
+    }
+    else
+    {
+        alertBox.css('background', 'red');
+    }
+
+    alertBox.text(msg);
+    alertBox.velocity({
+        top:0
+    },
+    {
+        duration : 1000
+    }).velocity({
+        top: '-35px'
+    },
+    {
+        duration : 1000,
+        delay: 2000
+    });
+};
+
 function renderTemplate(template, variables, target){
     for(var i = 0;i<variables.length;i++){
         var curTemp = template;
@@ -30,8 +57,9 @@ $.getJSON('api/categories.php', function(data){
 });
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
+        var bannerMsg = '<i class="fa fa-info"></i><span class="hello-banner">Hi ' + data['first_name']+'</span>';
         $('#loginButton').attr('href', 'javascript:return false;');
-        $('#loginButton button').html('<i class="fa fa-info"></i><span class="hello-banner">Hi ' + data['first_name']+'</span>');
+        $('#loginButton button').html(bannerMsg);
         $('#login').show();
         $('#loginButton').click(function(){
             $('#reg').css('display', 'block');
@@ -42,10 +70,15 @@ $.getJSON('api/fb.php?format=json', function(data){
                 if(data['ok'] == 1){
                     // OK
                     $("#reg").css('display', 'none');
+                    alertify("Registration Successful", true);
+                    $('#loginButton button').html(bannerMsg);
                 }else{
+                    alertify("Error Occurred", false);
                     // Not OK
                 }
                 return false;
+            }).fail(function(){
+                alertify("Error Occurred", false);
             });
             return false;
         });
@@ -144,34 +177,6 @@ $(document).ready(function(){
 				console.log(dir+' song');
 			}
 		//audio config ends
-
-		function alertify(msg, success)
-		{
-			var alertBox = $('#alert');
-			if(success)
-			{
-				alertBox.css('background', 'green');
-			}
-			else
-			{
-				alertBox.css('background', 'red');
-			}
-
-			alertBox.text(msg);
-			alertBox.velocity({
-				top:0
-			},
-			{
-				duration : 1000
-			}).velocity({
-				top: '-35px'
-			},
-			{
-				duration : 1000,
-				delay: 2000
-			});
-		};
-
 
 
 		bg.find('li:not(".current-bg")').velocity('fadeOut', {duration: 'slow'});
