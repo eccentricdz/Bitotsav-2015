@@ -31,7 +31,7 @@ $.getJSON('api/categories.php', function(data){
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
         $('#loginButton').attr('href', 'javascript:return false;');
-        $('#loginButton button').text('Hi ' + data['first_name']);
+        $('#loginButton button').html('<i class="fa fa-info"></i><span class="hello-banner">Hi ' + data['first_name']+'</span>');
         $('#login').show();
         $('#loginButton').click(function(){
             $('#reg').css('display', 'block');
@@ -49,17 +49,22 @@ $.getJSON('api/fb.php?format=json', function(data){
             });
             return false;
         });
-        try{
-            $('#tel + label').css('top', '-55%');
-            $('#city + label').css('top', '-55%');
-            $('#state + label').css('top', '-55%');
-            $('#college + label').css('top', '-55%');
-            $('#tel').val(data['phone']);
-            $('#city').val(data['city']);
-            $('#state').val(data['state']);
-            $('#college').val(data['college']);
-        }catch(e){
-            console.log(e);
+        if(!data['newUser']){
+            try{
+                $('#tel + label').css('top', '-55%');
+                $('#city + label').css('top', '-55%');
+                $('#state + label').css('top', '-55%');
+                $('#college + label').css('top', '-55%');
+                $('#tel').val(data['phone']);
+                $('#city').val(data['city']);
+                $('#state').val(data['state']);
+                $('#college').val(data['college']);
+            }catch(e){
+                console.log(e);
+            }
+        }else{
+            $('#loginButton button .hello-banner').append(', click here');
+            $('#loginButton button .hello-banner').css('font-size', '85%');
         }
     }else{
         $('#loginButton').attr('href', data['login_url']);
