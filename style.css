@@ -812,6 +812,76 @@ pointer-events: none;
 	color: white;
 }
 
+#event-wrapper{
+	list-style-type: none;
+	position: relative;
+	width: 100%;
+	height: 80%;
+	top: 14%;
+	color: white;
+}
+
+#event-desc{
+	width: 51%;
+}
+
+#event-list{
+	width: 40%;
+}
+
+.event-wrap{
+	float: left;
+	height: 100%;
+	overflow-y: scroll;
+	padding: 50px 0;
+}
+
+.event-head{
+	font-family: nexa-b;
+	letter-spacing: 2px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.3em;
+}
+
+#genre-events{
+	list-style-type: none;
+	position: relative;
+	width: 80%;
+	margin: 20px auto;
+}
+
+#genre-events>li{
+	width: 100%;
+	padding: 12px 35px;
+	color: white;
+	border: 2px solid white;
+	margin-top: 3px;
+	cursor: pointer;
+	display: block;
+		border-radius: 30px;
+		transition: all 0.2s linear;
+}
+
+#genre-events>li:last-child
+{
+	margin-bottom: 50px;
+}
+
+#genre-events>li:hover{
+	color: #FFE066;
+	border-color: #FFE066;
+}
+
+#genre-event-desc{
+	width: 80%;
+	margin: 20px auto;
+}
+
+.genre-event-register{
+	margin: 40px auto;
+}
 #contact-them{
 	position: relative;
 	width: 50%;
