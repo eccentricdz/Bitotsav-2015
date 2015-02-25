@@ -548,4 +548,8 @@ $(document).ready(function(){
 				eventCat.toggleClass('visible');
 			})
 
+			$('.front .event-cat>li').on('click', function(){
+				slideChange($('.'+currentPage).children('.slides'),'next');
+			})
+
 });
