@@ -129,7 +129,7 @@ $(document).ready(function(){
 		var currentPage = "home";
 		var bg = $('.bg');
 		var pages = $('.pages');
-
+			var delayScroll;
 		var scrollActive = true;
 
 		var vh = window.innerHeight;
@@ -241,6 +241,7 @@ $(document).ready(function(){
 
 		pageLink.on('click', function(event) {
 			event.preventDefault();
+			clearTimeout(delayScroll);
 			navLinkClicked = true;
 			var nextPage = $(this).attr('id');
 
@@ -262,7 +263,7 @@ $(document).ready(function(){
 				console.log(i+1);
 				slidePage(dir);
 			}
-			setTimeout(function(){
+			delayScroll = setTimeout(function(){
 			navLinkClicked = false;
 			$(window).on('scroll', onScroll);
 		}, 3000);
@@ -545,9 +546,13 @@ $(document).ready(function(){
 				//$(window).on('scroll', onScroll);
 			}
 
-			$('.category').on('click', function(){
+			$('.category, .event-cat').on('click', function(){
 				var eventCat = $('.event-cat');
 				eventCat.toggleClass('visible');
+			})
+
+			$('.front .event-cat>li').on('click', function(){
+				slideChange($('.'+currentPage).children('.slides'),'next');
 			})
 
 });
