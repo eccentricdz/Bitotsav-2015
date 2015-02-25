@@ -1,4 +1,4 @@
-var flagshipTemplate ='<li class="$eventID inside slide" id="$eventID"><img src="$eventImage" alt="$eventID" class="bg-image" /><div class="title"><p class="heading move-up fade anim gue">$eventName</p><button class="details move-up fade anim"><i class="fa fa-file-text-o"></i><span>Get the details</span></button></div><p class="desc move-right anim fade">$eventShortDescription</p><div class="details-box" id="e-boot"><i class="fa fa-close fa-2x"></i>$eventDescription<a class="details-pdf" target="_blank" href="$eventDetails"><button class="pdf"><i class="fa fa-file-text-o"></i><span>Get the PDF</span></button></a><!--<button class="event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button>--></div></li>';
+var flagshipTemplate ='<li class="$eventID inside slide" id="$eventID"><img src="$eventImage" alt="$eventID" class="bg-image" /><div class="title"><p class="heading move-up fade anim gue">$eventName</p><button class="details move-up fade anim"><i class="fa fa-file-text-o"></i><span>Get the details</span></button></div><p class="desc move-right anim fade">$eventShortDescription</p><div class="details-box" id="e-boot"><i class="fa fa-close fa-2x"></i>$eventDescription<a class="details-pdf" target="_blank" href="$eventDetails"><button class="pdf"><i class="fa fa-file-text-o"></i><span>Get the PDF</span></button></a><a href="$regLink" target="_blank" style="display:inline"><button class="event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button></a></div></li>';
 
 function getRegisterFormData(){
     var ret = {};
@@ -6,7 +6,6 @@ function getRegisterFormData(){
     ret['college'] = $('#college').val();
     ret['city'] = $('#city').val();
     ret['state'] = $('#state').val();
-    console.log(ret);
     return ret;
 }
 function alertify(msg, success)
@@ -57,9 +56,11 @@ $.getJSON('api/categories.php', function(data){
 });
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
-        var bannerMsg = '<i class="fa fa-info"></i><span class="hello-banner">Hi ' + data['first_name']+'</span>';
+        var bannerMsg = '<i class="fa fa-info"></i><span style="font-size:90%;" class="hello-banner">Hi ' + data['first_name']+'</span>';
+        var idMsg = ' (ID: BIT'+data['bitid']+')';
         $('#loginButton').attr('href', 'javascript:return false;');
         $('#loginButton button').html(bannerMsg);
+        $('.hello-banner').append(idMsg);
         $('#login').show();
         $('#loginButton').click(function(){
             $('#reg').css('display', 'block');
@@ -72,6 +73,7 @@ $.getJSON('api/fb.php?format=json', function(data){
                     $("#reg").css('display', 'none');
                     alertify("Registration Successful", true);
                     $('#loginButton button').html(bannerMsg);
+                    $('.hello-banner').append(' (ID: BIT'+data['bitid']+')');
                 }else{
                     alertify("Error Occurred", false);
                     // Not OK
@@ -96,6 +98,7 @@ $.getJSON('api/fb.php?format=json', function(data){
                 console.log(e);
             }
         }else{
+            $('#loginButton button').html(bannerMsg);
             $('#loginButton button .hello-banner').append(', click here');
             $('#loginButton button .hello-banner').css('font-size', '85%');
         }
