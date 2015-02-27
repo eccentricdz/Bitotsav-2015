@@ -748,7 +748,7 @@ overflow: hidden;
 #event-major .category{
 	position: relative;
 top: 0px;
-left: 52px;
+left: 78px;
 padding: 12px 138px;
 }
 
@@ -897,6 +897,7 @@ overflow: hidden;
 #genre-event-desc{
 	width: 80%;
 	margin: 20px auto;
+	overflow: hidden;
 }
 
 .genre-event-register{
