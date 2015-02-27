@@ -76,14 +76,13 @@ $.getJSON('api/categories.php', function(data){
         }
         categoryEvents[evt['eventCategory_id']].push(evt);
     }
-    // $('#genre-events').on('click', 'li', function(e){
-    //     var eid = $(e.target).attr('data');
-    //     $.getJSON('api/event.php?eventID='+eid, function(data){
-    //         for(k in data){
-    //             console.log(k);
-    //         }
-    //     });
-    // });
+    $('#genre-events').on('click', 'li', function(e){
+        var eid = $(e.target).attr('data');
+        $.getJSON('api/event.php?eventID='+eid, function(data){
+            $('#event-desc .event-head').html(data['eventName']);
+            $('#genre-event-desc').html(data['eventDescription']);
+        });
+    });
 });
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
