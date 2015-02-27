@@ -746,9 +746,10 @@ overflow: hidden;
 }
 
 #event-major .category{
-	position: absolute;
-top: -13px;
-left: 150px;
+	position: relative;
+top: 0px;
+left: 52px;
+padding: 12px 138px;
 }
 
 .event-cat li{
@@ -865,9 +866,10 @@ left: 150px;
 
 #genre-events{
 	list-style-type: none;
-	position: relative;
-	width: 80%;
-	margin: 20px auto;
+position: relative;
+width: 80%;
+margin: 26px auto;
+overflow: hidden;
 }
 
 #genre-events>li{
