@@ -897,7 +897,7 @@ overflow: hidden;
 #genre-event-desc{
 	width: 80%;
 	margin: 20px auto;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .genre-event-register{
