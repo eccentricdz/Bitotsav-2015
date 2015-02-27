@@ -2,21 +2,15 @@
   "files": [
     {
       "type": "SCRIPT",
-      "source": "js/jquery-2.1.3.min.js",
-      "size": 83000,
-      "stopExecution": false
-    },
-    {
-      "type": "SCRIPT",
       "source": "js/velocity.min.js",
       "size": 33500,
       "stopExecution": false
     },
-    {
+      {
       "type": "SCRIPT",
       "source": "js/main.js",
       "size": 15300,
-      "stopExecution": false
+      "stopExecution": true
     },
     {
       "type": "IMAGE",
@@ -95,8 +89,33 @@
     },
     {
       "type": "IMAGE",
-      "source": "images/events/events.jpg",
-      "size": 71600
+      "source": "images/events/brain.jpg",
+      "size": 97900
+    },
+     {
+      "type": "IMAGE",
+      "source": "images/nights/fusion.jpg",
+      "size": 48500
+    },
+     {
+      "type": "IMAGE",
+      "source": "images/nights/star.jpg",
+      "size": 86200
+    },
+     {
+      "type": "IMAGE",
+      "source": "images/nights/techno.jpg",
+      "size": 67500
+    },
+     {
+      "type": "IMAGE",
+      "source": "images/nights/band.jpg",
+      "size": 58700
+    },
+     {
+      "type": "IMAGE",
+      "source": "images/nights/pro.jpg",
+      "size": 123000
     },
     {
       "type": "AUDIO",
