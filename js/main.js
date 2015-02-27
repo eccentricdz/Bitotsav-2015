@@ -1,4 +1,5 @@
 var flagshipTemplate ='<li class="$eventID inside slide" id="$eventID"><img src="$eventImage" alt="$eventID" class="bg-image" /><div class="title"><p class="heading move-up fade anim gue">$eventName</p><button class="details move-up fade anim"><i class="fa fa-file-text-o"></i><span>Get the details</span></button></div><p class="desc move-right anim fade">$eventShortDescription</p><div class="details-box" id="e-boot"><i class="fa fa-close fa-2x"></i>$eventDescription<a class="details-pdf" target="_blank" href="$eventDetails"><button class="pdf"><i class="fa fa-file-text-o"></i><span>Get the PDF</span></button></a><a href="$regLink" target="_blank" style="display:inline"><button class="event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button></a></div></li>';
+var categoryEvents = {};
 
 function getRegisterFormData(){
     var ret = {};
@@ -39,7 +40,6 @@ function renderTemplate(template, variables, target){
     for(var i = 0;i<variables.length;i++){
         var curTemp = template;
         for(var k in variables[i]){
-            console.log(k);
             curTemp = curTemp.replace(new RegExp('\\$'+k, 'g'), variables[i][k]);
         }
         $(curTemp).appendTo(target);
@@ -53,6 +53,30 @@ $.getJSON('api/categories.php', function(data){
     $('button.details').on('click', function(){
         $(this).parent().siblings('.details-box').css('display', 'block');
     });
+    for(cat_name in data['categories']){
+        cat_name = data['categories'][cat_name];
+        $catLI = '<li id="cat-'+cat_name['id']+'">'+cat_name['categoryName']+'</li>';
+        $('<li id="cat-'+cat_name['id']+'">'+cat_name['categoryName']+'</li>').on('click', function() {
+            var catID = cat_name['id'];
+            var catName = cat_name['categoryName'];
+            return function(){
+                $('#genre-events').empty();
+                console.log(catID);
+                for(var i = 0; i<categoryEvents[catID].length;i++){
+                    var evt = categoryEvents[catID][i];
+                    $('#genre-events').append('<li id="evt-'+evt['id']+'">'+evt['eventName']+'</li>');
+                }
+                $('#event-list .category span').html(catName);
+            }
+        }()).appendTo('.event-cat');
+    }
+    for(var i = 0; i < data['events'].length;i++){
+        var evt = data['events'][i];
+        if(!categoryEvents[evt['eventCategory_id']]){
+            categoryEvents[evt['eventCategory_id']] = [];
+        }
+        categoryEvents[evt['eventCategory_id']].push(evt);
+    }
 });
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
