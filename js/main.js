@@ -78,9 +78,10 @@ $.getJSON('api/categories.php', function(data){
     }
     $('#genre-events').on('click', 'li', function(e){
         var eid = $(e.target).attr('data');
+        var registerButton = '<a style="display:block;" onclick="alertify(\'Registrations Coming Soon, Stay Tuned\', false);"><button class="genre-event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button></a>';
         $.getJSON('api/event.php?eventID='+eid, function(data){
             $('#event-desc .event-head').html(data['eventName']);
-            $('#genre-event-desc').html(data['eventDescription']);
+            $('#genre-event-desc').html(data['eventDescription']+registerButton);
         });
     });
 });
