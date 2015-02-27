@@ -738,6 +738,7 @@ pointer-events: none;
 	width: 100%;
 margin-left: 20px;
 margin-bottom: 30px;
+overflow: hidden;
 }
 
 .visible{
