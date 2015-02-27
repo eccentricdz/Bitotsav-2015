@@ -61,10 +61,9 @@ $.getJSON('api/categories.php', function(data){
             var catName = cat_name['categoryName'];
             return function(){
                 $('#genre-events').empty();
-                console.log(catID);
                 for(var i = 0; i<categoryEvents[catID].length;i++){
                     var evt = categoryEvents[catID][i];
-                    $('#genre-events').append('<li id="evt-'+evt['id']+'">'+evt['eventName']+'</li>');
+                    $('#genre-events').append('<li data='+evt['id']+'>'+evt['eventName']+'</li>');
                 }
                 $('#event-list .category span').html(catName);
             }
@@ -77,6 +76,13 @@ $.getJSON('api/categories.php', function(data){
         }
         categoryEvents[evt['eventCategory_id']].push(evt);
     }
+    $('#genre-events').on('click', 'li', function(e){
+        var eid = $(e.target).attr('data');
+        $.getJSON('api/event.php?eventID='+eid, function(data){
+            $('#event-desc .event-head').html(data['eventName']);
+            $('#genre-event-desc').html(data['eventDescription']);
+        });
+    });
 });
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
