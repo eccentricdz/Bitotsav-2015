@@ -77,6 +77,7 @@ $.getJSON('api/categories.php', function(data){
         categoryEvents[evt['eventCategory_id']].push(evt);
     }
     $('#genre-events').on('click', 'li', function(e){
+        $('#genre-event-desc').html('<center><i class="fa fa-circle-o-notch fa-spin" style=""></i></center>');
         var eid = $(e.target).attr('data');
         var registerButton = '<a style="display:block;" onclick="alertify(\'Registrations Coming Soon, Stay Tuned\', false);"><button class="genre-event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button></a>';
         $.getJSON('api/event.php?eventID='+eid, function(data){
