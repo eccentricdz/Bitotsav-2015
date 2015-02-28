@@ -586,4 +586,9 @@ $(document).ready(function(){
 				slideChange($('.'+currentPage).children('.slides'),'next');
 			})
 
+			$('.event-browse').on('click', function(){
+				slideChange($('.'+currentPage).children('.slides'),'next');
+			});
+
+
 });
