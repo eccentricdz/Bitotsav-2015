@@ -55,6 +55,7 @@
 		<li id="forward"><i class="fa fa-forward"></i></li>
 	</ul>
     <a id="loginButton"><button class="register"><i class="fa fa-facebook"></i><span class="login-banner">login with facebook</span></button></a>
+	<a href="#" id="paylink" class="links" style="" onclick="togglePay()"><i class="fa fa-user"></i>Pay</a>
 	<a href="api/logoutfb.php" id="login" class="links" style="display:none"><i class="fa fa-user"></i>Logout</a>
 	
 					<div class="forms" id="reg">
@@ -87,28 +88,6 @@
 						</form>
 					</div>
 
-					<div class="forms" id="user-login">
-						<p class="form-head">Bitotsav login</p>
-						<i class="fa fa-close fa-2x"></i>
-						<form action="" id="user-login">
-							
-							<div class="input-wrapper">
-								<input type="email" id="email" name="email" required />
-								<label for="email">Email Address</label>
-							</div>
-
-							<div class="input-wrapper">
-								<input type="password" id="password" name="password" required />
-								<label for="password">Password</label>
-							</div>
-
-							<a href="#javascript" class="links" id="forgot"><i class="fa fa-meh-o"></i>Forgot password?</a>
-
-							<button type='sumbit' id='submit'><i class="fa fa-check"></i><span>Submit</span></button>
-
-						</form>
-					</div>
-
 	<ul class="master-list">
 		<li class="navigation">
 	<div class="nav">
@@ -129,9 +108,9 @@
 			<li class="nav-link">
 				<a href="#social" id='social' class="page-link"><i class="fa fw  fa-heart-o"></i><span class="name-link left-right-padding fade">social cause</span></a>
 			</li>
-			<!-- <li class="nav-link">
-				<a href="#sponsors" id='sponsors' class="page-link"><i class="fa fw  fa-inr"></i><span class="name-link left-right-padding fade">sponsors</span></a>
-			</li> -->
+			<li class="nav-link">
+				<a href="http://www.ketto.org/bitotsav15" target="_blank" id='sponsors' class=""><i class="fa fw  fa-inr"></i><span class="name-link left-right-padding fade">Contribute</span></a>
+			</li>
 			<li class="nav-link">
 				<a href="#contact" id='contact' class="page-link"><i class="fa fw  fa-comments-o"></i><span class="name-link left-right-padding fade">contact us</span></a>
 			</li>
@@ -325,7 +304,6 @@ This is one night with a blend of ethnicity and resounding grooves pledged to le
 
 								<p class="event-head">
 								</p>
-
 
 								<ul id="genre-events">
 								</ul>
