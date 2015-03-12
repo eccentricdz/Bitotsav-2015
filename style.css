@@ -59,6 +59,16 @@ z-index: 10;
 	display: block;
 }
 
+#contribute{
+	    position: fixed;
+    top: 48px;
+    right: 308px;
+}
+
+#contribute:hover{
+	text-decoration: underline;
+}
+
 #alert{
 	text-align: center;
 	color: white;
