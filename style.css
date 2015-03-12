@@ -38,7 +38,18 @@ body{
 }
 
 
-
+.pages a{
+    color: #FFE066;
+    text-transform: none;
+    display: inline;
+    font-family: inherit;
+}
+.pages a:visited{
+    color: #FFE066;
+    text-transform: none;
+    display: inline;
+    font-family: inherit;
+}
 a{
 	color: white;
 text-decoration: none;
