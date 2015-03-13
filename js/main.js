@@ -591,5 +591,24 @@ $(document).ready(function(){
 				slideChange($('.'+currentPage).children('.slides'),'next');
 			});
 
+			var notif = $('#notifications');
+			$('#notif-button').on('mouseover', function(event) {
+				notif.velocity({
+					right: '0'
+				},
+				{
+					duration: 300
+				})
+			});
+
+			notif.on('mouseleave', function(){
+				notif.velocity({
+					right: '-350px'
+				},
+				{
+					duration: 300
+				})
+			})
+
 
 });

@@ -1230,3 +1230,47 @@ font-size: 1.1em;
 		background: #fff;
 	border-radius: 8px;
  }
+
+ #notif-button{
+ position: fixed;
+color: #FFF;
+top: 45%;
+right: 11px;
+opacity: 1;
+z-index: 100;
+}
+
+#notifications{
+	position: fixed;
+	width: 350px;
+	height: 100vh;
+	top:0;
+	right: -350px;
+	background: #212121;
+	z-index: 2000;
+	overflow-y: scroll;
+}
+
+#notif-head{
+	text-transform: uppercase;
+color: rgb(182, 182, 182);
+text-align: center;
+margin: 20px auto;
+padding: 10px;
+border: 2px solid;
+width: 75%;
+}
+
+#notifs{
+	width: 100%;
+	padding: 20px;
+	list-style-type: none;
+	color: rgb(182, 182, 182);
+
+}
+
+#notifs > li{
+	margin-bottom: 10px;
+padding-bottom: 10px;
+border-bottom: 1px solid rgb(65, 65, 65);
+}
