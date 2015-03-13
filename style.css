@@ -1216,3 +1216,17 @@ font-size: 1.1em;
 		transform: translateX(0px);
 	}
 }
+
+
+ ::-webkit-scrollbar
+ {
+	width: 10px;
+ }
+/*::-webkit-scrollbar-track{
+		background: rgba(255,255,255,0.2);
+}*/
+ ::-webkit-scrollbar-thumb{
+
+		background: #fff;
+	border-radius: 8px;
+ }
