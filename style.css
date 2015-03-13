@@ -1222,9 +1222,9 @@ font-size: 1.1em;
  {
 	width: 10px;
  }
-/*::-webkit-scrollbar-track{
-		background: rgba(255,255,255,0.2);
-}*/
+::-webkit-scrollbar-track{
+		background: none;
+}
  ::-webkit-scrollbar-thumb{
 
 		background: #fff;
