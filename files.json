@@ -69,11 +69,6 @@
     },
     {
       "type": "IMAGE",
-      "source": "images/home/flowers.jpg",
-      "size": 129000
-    },
-    {
-      "type": "IMAGE",
       "source": "images/home/food.jpg",
       "size": 101000
     },
