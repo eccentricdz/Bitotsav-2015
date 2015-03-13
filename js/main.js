@@ -45,6 +45,32 @@ function renderTemplate(template, variables, target){
         $(curTemp).appendTo(target);
     }
 }
+function registerEvent(eid){
+    $descButton = $('.genre-event-register span');
+    $.ajax({
+        url: '/2015/api/evtreg.php',
+        type: 'POST',
+        data: $.param( {'eid': eid} ),
+        success: function (data, textStatus, jqXHR) {
+            data = JSON.parse(data);
+            console.log(data);
+            if(data['ok']){
+                alertify(data['msg'], true);
+                if(data['ok'] == 1)
+                    $descButton.text('Deregister from the event');
+                else
+                    $descButton.text('Register for the event');
+            }else if(data['error']){
+                alertify(data['error'], false);
+            }else
+                alertify('Some unknown error occurred', false);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // error callback
+            alertify('Some error occurred while connecting to the server', false);
+        }
+    });
+}
 $.getJSON('api/categories.php', function(data){
     renderTemplate(flagshipTemplate, data['flagship'], '#national .slides');
     $('.details-box .fa-close').on('click', function(){
@@ -79,9 +105,10 @@ $.getJSON('api/categories.php', function(data){
     $('#genre-events').on('click', 'li', function(e){
         $('#genre-event-desc').html('<center><i class="fa fa-circle-o-notch fa-spin" style=""></i></center>');
         var eid = $(e.target).attr('data');
-        var registerButton = '<a style="display:block;" onclick="alertify(\'Registrations Coming Soon, Stay Tuned\', false);"><button class="genre-event-register"><i class="fa fa-plus"></i><span>Register for the event</span></button></a>';
         $.getJSON('api/event.php?eventID='+eid, function(data){
             $('#event-desc .event-head').html(data['eventName']);
+            console.log(data);
+            var registerButton = '<a style="display:block;" onclick="registerEvent('+eid+')";"><button class="genre-event-register"><i class="fa fa-plus"></i><span>'+(data['reg'] == 1?'Deregister from the event':'Register for the event')+'</span></button></a>';
             $('#genre-event-desc').html(data['eventDescription']+registerButton);
         });
     });
@@ -106,6 +133,7 @@ $.getJSON('api/fb.php?format=json', function(data){
                     alertify("Registration Successful", true);
                     $('#loginButton button').html(bannerMsg);
                     $('.hello-banner').append(' (ID: BIT'+data['bitid']+')');
+                    $('#reg_comp').hide();
                 }else{
                     alertify("Error Occurred", false);
                     // Not OK
