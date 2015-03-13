@@ -1218,7 +1218,7 @@ font-size: 1.1em;
 }
 
 
- ::-webkit-scrollbar
+/* ::-webkit-scrollbar
  {
 	width: 10px;
  }
@@ -1230,7 +1230,7 @@ font-size: 1.1em;
 		background: #fff;
 	border-radius: 8px;
  }
-
+*/
  #notif-button{
  position: fixed;
 color: #FFF;
