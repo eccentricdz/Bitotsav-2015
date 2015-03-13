@@ -130,9 +130,10 @@ $.getJSON('api/fb.php?format=json', function(data){
                 console.log(e);
             }
         }else{
-            $('#loginButton button').html(bannerMsg);
-            $('#loginButton button .hello-banner').append(', click here');
+            $loginbutton = $('#loginButton button');
+            $loginbutton.html(bannerMsg);
             $('#loginButton button .hello-banner').css('font-size', '85%');
+            $('#reg_comp').show().css('right', parseInt($loginbutton.css('right'), 10) + parseInt($loginbutton.css('width'), 10)-10);
         }
     }else{
         $('#loginButton').attr('href', data['login_url']);
