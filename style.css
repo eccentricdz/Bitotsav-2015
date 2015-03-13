@@ -69,6 +69,18 @@ z-index: 10;
 	text-decoration: underline;
 }
 
+#scroll-down{
+	    position: absolute;
+    display: block;
+    color: white;
+    bottom: 5px;
+    left: 49%;
+		webkit-animation: up-down 0.8s infinite alternate;
+	-moz-animation: up-down 0.8s infinite alternate;
+	-o-animation: up-down 0.8s infinite alternate;
+	animation: up-down 0.8s infinite alternate;
+}
+
 #alert{
 	text-align: center;
 	color: white;
@@ -210,18 +222,18 @@ margin: 0 auto;
 	border-bottom: 1px solid #483354;
 }
 
-.page-link{
+.page-link, .contri-link{
 	color: white;
 text-transform: uppercase;
 text-decoration: none;
 }
 
-.page-link i{
+.page-link i, .contri-link i{
 	transition: 0.3s linear;
 	font-size: 1.5em;
 }
 
-.page-link:hover i{
+.page-link:hover i, .contri-link:hover i{
 	color: #faaf16;
 }
 
@@ -627,6 +639,11 @@ top: 35px;
 right: 52px;
 }
 
+#reg_comp{
+	position: fixed;
+	top:12px;
+	right: 270px;
+}
 #login{
 	position: fixed;
 top: 85px;
@@ -1032,6 +1049,39 @@ font-size: 1.1em;
 	}
 	to{
 		opacity: 1;
+	}
+}
+
+@-webkit-keyframes up-down{
+	from{
+		bottom: 18px;
+	}
+	to{
+		bottom: 0px;
+	}
+}
+@-moz-keyframes up-down{
+	from{
+		bottom: 18px;
+	}
+	to{
+		bottom: 0px;
+	}
+}
+@-o-keyframes up-down{
+	from{
+		bottom: 18px;
+	}
+	to{
+		bottom: 0px;
+	}
+}
+@keyframes up-down{
+	from{
+		bottom: 18px;
+	}
+	to{
+		bottom: 0px;
 	}
 }
 
