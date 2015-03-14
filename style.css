@@ -1324,7 +1324,7 @@ box-shadow: 0px -5px 11px rgba(0,0,0,0.7);
 color: #FFE066; 
 }
 
-.forum-time{
+.forum-time, .notif-time{
 	    font-style: italic;
     color: #515151;
 }
