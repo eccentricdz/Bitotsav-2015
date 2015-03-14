@@ -71,6 +71,7 @@ function registerEvent(eid){
         }
     });
 }
+// Get category event tree
 $.getJSON('api/categories.php', function(data){
     renderTemplate(flagshipTemplate, data['flagship'], '#national .slides');
     $('.details-box .fa-close').on('click', function(){
@@ -113,6 +114,9 @@ $.getJSON('api/categories.php', function(data){
         });
     });
 });
+
+
+// Login stuffs
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
         var bannerMsg = '<i class="fa fa-info"></i><span style="font-size:90%;" class="hello-banner">Hi ' + data['first_name']+'</span>';
@@ -167,6 +171,21 @@ $.getJSON('api/fb.php?format=json', function(data){
         $('#loginButton').attr('href', data['login_url']);
     }
 });
+// Get notifications
+function getNotif(start, size){
+    $notifArea = $('#notifs');
+    $notifArea.append('<li><center><i class="fa fa-circle-o-notch fa-spin"></i></center></li>');
+    $.getJSON('api/notification.php?start='+start+'&size='+size, function(data){
+        var notifs = data['notifs'];
+        $('#notifs li:last-child').remove();
+        for(var i = 0;i<notifs.length;i++){
+            $notifArea.append('<li><b>'+notifs[i]['notificationTime']+': </b>'+notifs[i]['message']+'</li>');
+        }
+        $notifArea.data('start', start+size);
+    });
+}
+getNotif(0, 100);
+
 $(document).ready(function(){
     (function removeFacebookAppendedHash() {
         if (!window.location.hash || window.location.hash !== '#_=_')
