@@ -906,20 +906,22 @@ padding: 12px 138px;
 	list-style-type: none;
 position: relative;
 width: 80%;
+height: 400px;
 margin: 26px auto;
-overflow: hidden;
+overflow: auto;
 }
 
 #genre-events>li{
 	width: 100%;
-	padding: 6px 35px;
-	color: white;
-	border: 2px solid white;
-	margin-top: 6px;
-	cursor: pointer;
-	display: block;
-		border-radius: 30px;
-		transition: all 0.2s linear;
+padding: 6px 35px;
+color: #FFF;
+border: 2px solid #FFF;
+margin-top: 6px;
+cursor: pointer;
+display: block;
+border-radius: 30px;
+transition: all 0.2s linear 0s;
+height: 40px;
 }
 
 #genre-events>li:last-child
