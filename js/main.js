@@ -621,6 +621,7 @@ $(document).ready(function(){
 			});
 
 			var notif = $('#notifications');
+			var forum = $('#forum');
 			$('#notif-button').on('mouseover', function(event) {
 				notif.velocity({
 					right: '0'
@@ -633,6 +634,24 @@ $(document).ready(function(){
 			notif.on('mouseleave', function(){
 				notif.velocity({
 					right: '-350px'
+				},
+				{
+					duration: 300
+				})
+			})
+
+			$('#forum-button').on('mouseover', function(event) {
+				forum.velocity({
+					right: '0'
+				},
+				{
+					duration: 300
+				})
+			});
+
+			forum.on('mouseleave', function(){
+				forum.velocity({
+					right: '-500px'
 				},
 				{
 					duration: 300
