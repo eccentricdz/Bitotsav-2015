@@ -38,13 +38,66 @@
 		<div id="loading-bar"></div>
 	</div>
 
-	<i class="fa fa-exclamation-circle fa-2x" id="notif-button"></i>
+	<i class="fa fa-exclamation-circle fa-2x side-buttons" id="notif-button"></i>
+	<i class="fa fa-comments-o fa-2x side-buttons" id="forum-button"></i>
 
-	<div id="notifications">
-		<p id="notif-head">notifications</p>
+	<div id="notifications" class="side-box">
+		<p class="side-head">notifications</p>
 
 		<ul id="notifs">
 		</ul>
+	</div>
+
+	<div class="side-box" id="forum">
+		<p class="side-head">
+			forum
+		</p>
+
+		<ul id="forum-msgs">
+			<li class="user">
+				<span class="forum-user">
+					Rahul
+				</span>:
+				<span class="forum-msg">
+					Hello motherfuckers!	
+				</span>
+				&nbsp;
+				<span class="forum-time">
+					(13 march 02:30:45)
+				</span>
+			</li>
+
+			<li class="admin">
+				<span class="forum-user">
+					Admin
+				</span>:
+				<span class="forum-msg">
+					Fuck you bitch!	
+				</span>
+				&nbsp;
+				<span class="forum-time">
+					(13 march 02:32:12)
+				</span>
+			</li>
+
+			<li class="admin">
+				<span class="forum-user">
+					Admin
+				</span>:
+				<span class="forum-msg">
+					Asasaisasnasnasm sadaadad
+					dasndsadas
+					dabsdasdkmadmasl
+				</span>
+				&nbsp;
+				<span class="forum-time">
+					(13 march 02:32:12)
+				</span>
+			</li>
+
+		</ul>
+
+		<textarea name="forum-input" id="forum-input" autofocus="true" placeholder="Enter your message here"></textarea>
 	</div>
 
 	<img src="images/bitotsav.png" alt="bitotsav logo" class="logo revolve"/>
