@@ -1318,6 +1318,8 @@ box-shadow: 0px -5px 11px rgba(0,0,0,0.7);
 	margin-bottom: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #313131;
+    overflow-x: hidden;
+    word-wrap: break-word;
 }
 
 #forum-msgs .user{

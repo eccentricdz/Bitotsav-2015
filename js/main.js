@@ -71,6 +71,54 @@ function registerEvent(eid){
         }
     });
 }
+function initializeAdminChat(){
+    $chatTextArea = $('#forum-input');
+    $chatTextArea.attr('placeholder', 'Loading Chat');
+    $chatMsg = $('#forum-msgs');
+    $chatMsg.append('<li><center><i class="fa fa-circle-o-notch fa-spin"></i></center></li>');
+    $.getJSON('api/chat.php', function(data){
+        $chatMsg.find('li:last-child').remove();
+        $user = data['user'];
+        for(var i = 0;i<data['msg'].length;i++){
+            var msg = data['msg'][i];
+            var html = '<li class="'+(msg['reply_to']?'admin':'user')+'">';
+            html += '<span class="forum-user">'+(msg['reply_to']?'Admin':$user)+'</span>: ';
+            html += '<span class="forum-msg">'+msg['content']+'</span> ';
+            html += '<span class="forum-time">('+msg['Time']+')</span>';
+            html += '</li>';
+            $chatMsg.append(html);
+        }
+        $chatTextArea.attr('placeholder', 'Enter your message here, admins will reply very soon').
+            attr('disabled', false);
+        $chatTextArea.keypress(function(e){
+            if(e.which == 13){
+                $(this).attr('disabled', true);
+                $.ajax({
+                    url: 'api/chat.php',
+                    type: 'POST',
+                    data: $.param( {'msg': $chatTextArea.val()} ),
+                    success: function (data, textStatus, jqXHR) {
+                        // success callback
+                        data = JSON.parse(data);
+                        var html = '<li class="'+('user')+'">';
+                        html += '<span class="forum-user">'+($user)+'</span>: ';
+                        html += '<span class="forum-msg">'+data['msg']+'</span> ';
+                        html += '<span class="forum-time">('+data['time']+')</span>';
+                        html += '</li>';
+                        $chatMsg.append(html);
+                        $chatTextArea.val('');
+                        $chatTextArea.attr('disabled', false);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alertify('There was an error communicating with the chat system', false);
+                        $chatTextArea.attr('disabled', false);
+                    }
+                });
+            }
+        });
+    });
+}
+// Get category event tree
 $.getJSON('api/categories.php', function(data){
     renderTemplate(flagshipTemplate, data['flagship'], '#national .slides');
     $('.details-box .fa-close').on('click', function(){
@@ -113,6 +161,9 @@ $.getJSON('api/categories.php', function(data){
         });
     });
 });
+
+
+// Login stuffs
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
         var bannerMsg = '<i class="fa fa-info"></i><span style="font-size:90%;" class="hello-banner">Hi ' + data['first_name']+'</span>';
@@ -157,6 +208,7 @@ $.getJSON('api/fb.php?format=json', function(data){
             }catch(e){
                 console.log(e);
             }
+            initializeAdminChat();
         }else{
             $loginbutton = $('#loginButton button');
             $loginbutton.html(bannerMsg);
@@ -167,6 +219,21 @@ $.getJSON('api/fb.php?format=json', function(data){
         $('#loginButton').attr('href', data['login_url']);
     }
 });
+// Get notifications
+function getNotif(start, size){
+    $notifArea = $('#notifs');
+    $notifArea.append('<li><center><i class="fa fa-circle-o-notch fa-spin"></i></center></li>');
+    $.getJSON('api/notification.php?start='+start+'&size='+size, function(data){
+        var notifs = data['notifs'];
+        $('#notifs li:last-child').remove();
+        for(var i = 0;i<notifs.length;i++){
+            $notifArea.append('<li>'+notifs[i]['message']+' <span class="notif-time">('+notifs[i]['notificationTime']+')</span></li>');
+        }
+        $notifArea.data('start', start+size);
+    });
+}
+getNotif(0, 100);
+
 $(document).ready(function(){
     (function removeFacebookAppendedHash() {
         if (!window.location.hash || window.location.hash !== '#_=_')
@@ -610,6 +677,7 @@ $(document).ready(function(){
 			$('.category, .event-cat').on('click', function(){
 				var eventCat = $('.event-cat');
 				eventCat.toggleClass('visible');
+                $('#genre-events').toggle();
 			})
 
 			$('.front .event-cat>li').on('click', function(){
