@@ -59,6 +59,10 @@ z-index: 10;
 	display: block;
 }
 
+a.notif-link{
+
+}
+
 #contribute{
 	    position: fixed;
     top: 48px;
@@ -397,9 +401,10 @@ letter-spacing: 1px;
 
 
 	.inside .heading{
-		font-size: 50pt;
+		font-size: 40pt;
 		letter-spacing: 5pt;
 	}
+
 
 	.sub-heading{
 		font-family: nexa-l;

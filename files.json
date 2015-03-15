@@ -89,13 +89,8 @@
     },
      {
       "type": "IMAGE",
-      "source": "images/nights/fusion.jpg",
-      "size": 48500
-    },
-     {
-      "type": "IMAGE",
-      "source": "images/nights/star.jpg",
-      "size": 86200
+      "source": "images/nights/heritage.jpg",
+      "size": 76800
     },
      {
       "type": "IMAGE",
@@ -110,32 +105,12 @@
      {
       "type": "IMAGE",
       "source": "images/nights/pro.jpg",
-      "size": 123000
+      "size": 192000
     },
      {
       "type": "IMAGE",
-      "source": "images/nights/fusion.jpg",
-      "size": 48500
-    },
-     {
-      "type": "IMAGE",
-      "source": "images/nights/star.jpg",
-      "size": 86200
-    },
-     {
-      "type": "IMAGE",
-      "source": "images/nights/techno.jpg",
-      "size": 67500
-    },
-     {
-      "type": "IMAGE",
-      "source": "images/nights/band.jpg",
-      "size": 58700
-    },
-     {
-      "type": "IMAGE",
-      "source": "images/nights/pro.jpg",
-      "size": 123000
+      "source": "images/nights/fusions.jpg",
+      "size": 102000
     },
     {
       "type": "AUDIO",
