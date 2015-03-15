@@ -667,7 +667,7 @@ font-size: smaller;
 	background: #EFEFEF;
 	z-index: 999;
 	display: none;
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden; 
 	color: #0D233E;
 }
@@ -768,7 +768,7 @@ pointer-events: none;
 	color: white;
 	list-style: none;
 	margin-top: 15px;
-	display: none;
+	/*display: none;*/
 	transition: all 0.2s linear;
 }
 
@@ -822,7 +822,7 @@ padding: 12px 138px;
 		background: rgba(31,19,38,0.8);
 		z-index: 100;
 		padding: 50px;
-		overflow-y: scroll;
+		overflow-y: auto;
 		color: #FFE066;
 		display: none;
 }
@@ -879,7 +879,7 @@ padding: 12px 138px;
 
 #event-desc{
 	width: 51%;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 #event-list{
@@ -1257,7 +1257,7 @@ top: 41%;
 	top:0;
 	background: #212121;
 	z-index: 2000;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 #notifications{
