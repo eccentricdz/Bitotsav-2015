@@ -401,7 +401,7 @@ letter-spacing: 1px;
 
 
 	.inside .heading{
-		font-size: 40pt;
+		font-size: 4i0pt;
 		letter-spacing: 5pt;
 	}
 
@@ -1342,4 +1342,18 @@ color: #FFE066;
 
 .forum-user{
 	font-style: italic;
+}
+
+#payment{
+	display: block;
+	position: fixed;
+	z-index: 5;
+	bottom: -30px;
+	right: 50px;
+	transform: rotateZ(6deg);
+	transition: bottom 0.3s;
+}
+
+#payment:hover{
+	bottom: -10px;
 }
