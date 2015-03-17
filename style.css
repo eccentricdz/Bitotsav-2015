@@ -965,8 +965,9 @@ height: 40px;
 }
 
 .page.contact{
-	background: #E7E7E7;
-	overflow: auto;
+	background: none repeat scroll 0% 0% #1B171E;
+overflow: auto;
+color:#60BCAF;
 }
 
 #contact-wrapper{
@@ -1011,19 +1012,19 @@ padding: 15px;
 .contact-img{
 	width: 80px;
 height: 80px;
-	background: url("images/contact/default.png") center center;
+	background: url("images/contact/default-2.png") center center;
 background-size: cover;
 border-radius: 50%;
 margin: 8px;
+border: 2px solid rgb(47, 43, 51);
 }
 
-#shekar .contact-img{
-	background: url("images/contact/ankur.jpg") center center;
-	background-size: cover;
+.contact-name{
+	font-weight: bolder;
 }
 
 #ankur .contact-img{
-	background: url("images/contact/ankur.jpg") center center;
+	background: url("images/contact/ankur-2.jpg") center center;
 	background-size: cover;
 }
 
