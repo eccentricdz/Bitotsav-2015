@@ -1017,6 +1017,9 @@ border-radius: 50%;
 margin: 8px;
 }
 
+.contact-name{
+	font-weight: bolder;
+}
 #shekar .contact-img{
 	background: url("images/contact/ankur.jpg") center center;
 	background-size: cover;
