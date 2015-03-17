@@ -970,6 +970,10 @@ overflow: auto;
 color:#60BCAF;
 }
 
+.page.contact .fa{
+	color: #9DB498;
+}
+
 #contact-wrapper{
 	position: relative;
 width: 85%;
@@ -983,6 +987,10 @@ padding-left: 50px;
 .contact-cat{
 	width:100%;
 	margin-bottom: 10px;
+}
+
+.contact-cat:last-child{
+	margin-bottom: 100px;
 }
 
 .position{
@@ -1022,6 +1030,7 @@ border: 2px solid rgb(47, 43, 51);
 
 .contact-name{
 	font-weight: bolder;
+	color: #9DB498;
 }
 
 #ankur .contact-img{
