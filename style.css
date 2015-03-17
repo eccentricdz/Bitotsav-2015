@@ -1024,6 +1024,7 @@ border: 2px solid rgb(47, 43, 51);
 }
 
 #ankur .contact-img{
+    display: none;
 	background: url("images/contact/ankur-2.jpg") center center;
 	background-size: cover;
 }
