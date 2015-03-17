@@ -71,7 +71,9 @@ function registerEvent(eid){
         }
     });
 }
+var chatEnabled = false;
 function initializeAdminChat(){
+    if(chatEnabled)return true;
     $chatTextArea = $('#forum-input');
     $chatTextArea.attr('placeholder', 'Loading Chat');
     $chatMsg = $('#forum-msgs');
@@ -90,6 +92,7 @@ function initializeAdminChat(){
         }
         $chatTextArea.attr('placeholder', 'Enter your message here, admins will reply very soon').
             attr('disabled', false);
+        chatEnabled = true;
         $chatTextArea.keypress(function(e){
             if(e.which == 13){
                 $(this).attr('disabled', true);
@@ -185,6 +188,7 @@ $.getJSON('api/fb.php?format=json', function(data){
                     $('#loginButton button').html(bannerMsg);
                     $('.hello-banner').append(' (ID: BIT'+data['bitid']+')');
                     $('#reg_comp').hide();
+                    initializeAdminChat();
                 }else{
                     alertify("Error Occurred", false);
                     // Not OK

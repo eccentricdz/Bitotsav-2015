@@ -787,7 +787,7 @@ pointer-events: none;
 	color: white;
 	list-style: none;
 	margin-top: 15px;
-	/*display: none;*/
+	display: none;
 	transition: all 0.2s linear;
 }
 
