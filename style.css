@@ -539,7 +539,7 @@ left: 70px;
 .audio-controls{
 	width: 120px;
 	position: fixed;
-	top: 77vh;
+	top: 86vh;
 	left: 14vw;
 }
 
@@ -547,7 +547,7 @@ left: 70px;
 font-style: italic;
 font-weight: 300;
 position: fixed;
-top: 80vh;
+top: 89vh;
 left: 15vw;
 opacity: 0.5;
 color: white;
@@ -1034,7 +1034,6 @@ border: 2px solid rgb(47, 43, 51);
 }
 
 #ankur .contact-img{
-    display: none;
 	background: url("images/contact/ankur-2.jpg") center center;
 	background-size: cover;
 }
