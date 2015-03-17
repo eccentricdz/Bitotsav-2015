@@ -963,51 +963,70 @@ height: 40px;
 .genre-event-register{
 	margin: 40px auto;
 }
-#contact-them{
+
+.page.contact{
+	background: #E7E7E7;
+	overflow: auto;
+}
+
+#contact-wrapper{
 	position: relative;
-	width: 50%;
-	margin: 150px auto;
-	list-style-type: none;
-	color: #bbb;
+width: 100%;
+overflow: auto;
+height: 100vh;
+list-style-type: none;
+margin-top: 130px;
+	
 }
 
-#contact-them>li
-{
+.contact-cat{
+	width:100%;
+	margin-bottom: 10px;
+}
 
+.position{
+	font-size: 1.3em;
+width: 55%;
+display: block;
+border: 2px solid;
+padding: 7px;
+border-radius: 25px;
+}
+
+.contact-them{
+	    width: 79%;
+    position: relative;
+    left: -54px;
+    margin-top: 10px;
+    overflow: hidden;
 }
 
 
-#contact-them>li>div{
-	display: inline-block;
+.contact-them> li{
+	display: block;
+float: left;
+padding: 15px;
 }
 
 .contact-img{
-width: 150px;
-height: 150px;
-overflow: hidden;
+	width: 80px;
+height: 80px;
+	background: url("images/contact/default.png") center center;
+background-size: cover;
 border-radius: 50%;
-margin-right: 50px;
+margin: 8px;
 }
 
-.contact-details{
-	height: 150px;
-position: relative;
-top: -30px;
-font-size: 1.1em;
+#shekar .contact-img{
+	background: url("images/contact/ankur.jpg") center center;
+	background-size: cover;
 }
 
-#position{
-	margin-bottom: 10px;
-	border-bottom: 1px solid #fff;
+#ankur .contact-img{
+	background: url("images/contact/ankur.jpg") center center;
+	background-size: cover;
 }
 
-#arvind{
-	background:url(images/contact/arvind.jpg) no-repeat center center;
-}
-
-#ankur{
-	background:url(images/contact/ankur.jpg) no-repeat center center;
-}
 .sub-heading.anim{
 	-webkit-animation-delay: 0.5s;
 	-moz-animation-delay: 0.5s;
