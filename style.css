@@ -977,6 +977,7 @@ overflow: auto;
 height: 100vh;
 list-style-type: none;
 margin-top: 130px;
+padding-left: 50px;
 	
 }
 
@@ -986,18 +987,18 @@ margin-top: 130px;
 }
 
 .position{
-	font-size: 1.3em;
-width: 55%;
+	font-size: 1.1em;
+width: 85%;
 display: block;
-border: 2px solid;
-padding: 7px;
+border: 1px solid;
 border-radius: 25px;
+padding: 5px 5px 5px 15px;
+color: #9DB498;
 }
 
 .contact-them{
 	    width: 79%;
     position: relative;
-    left: -54px;
     margin-top: 10px;
     overflow: hidden;
 }
@@ -1010,6 +1011,7 @@ padding: 15px;
 }
 
 .contact-img{
+	display:none;
 	width: 80px;
 height: 80px;
 	background: url("images/contact/default-2.png") center center;
