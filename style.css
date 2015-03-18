@@ -77,15 +77,13 @@ a.notif-link{
 
 }
 
-#contribute{
+#schedule{
 	    position: fixed;
     top: 48px;
     right: 308px;
-}
-
-#contribute:hover{
-	text-decoration: underline;
-}
+    font-weight: bolder;
+        border-right: 1px solid;
+    padding-right: 11px;}
 
 #scroll-down{
 	    position: absolute;
@@ -159,6 +157,7 @@ position: relative;
 
 .links i{
 	padding-right: 15px;
+	font-weight: bolder;
 }
 
 .logo{
