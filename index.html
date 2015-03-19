@@ -80,8 +80,10 @@
 		<li id="forward"><i class="fa fa-forward"></i></li>
 	</ul>
 	<img src="images/reg_comp.png" alt="" id="reg_comp" style="display:none">
-    <a id="loginButton"><button class="register"><i class="fa fa-facebook"></i><span class="login-banner">login with facebook</span></button></a>
+    <a id="loginButton"><button class="register" id="loginButton"><i class="fa fa-facebook"></i><span class="login-banner">login with facebook</span></button></a><span id="or">or</span>
+    <a id="bit-loginButton"><button class="register" id="bit-loginButton"><i class="fa fa-user"></i><span class="login-banner">login with Bit-ID</span></button></a>
 	<a href="api/logoutfb.php" id="login" class="links" style="display:none"><i class="fa fa-user"></i>Logout</a>
+	
 
 	<a href="events-schedule.xlsx" id="schedule" class="links" target="_blank"><i class="fa fa-file-excel-o"></i><i>Events Schedule</i></a> 
 	
@@ -114,6 +116,27 @@
 
 						</form>
 					</div>
+
+					<div class="forms" id="bitid-login">
+						<p class="form-head">bitotsav login</p>
+						<i class="fa fa-close fa-2x"></i>
+						<form action="#" id="register">
+							
+							<div class="input-wrapper">
+								<input type="text" id="bit-id" name="bit-id" required />
+								<label for="tel">Bitotsav ID</label>
+							</div>
+
+							<div class="input-wrapper">
+								<input type="password" id="bit-password" name="bit-password" required/>
+								<label for="college">Password generated at the help desk</label>
+							</div>
+
+							<button id='submit'><i class="fa fa-check"></i><span>Submit</span></button>
+
+						</form>
+					</div>
+
 
 
 	<ul class="master-list">
