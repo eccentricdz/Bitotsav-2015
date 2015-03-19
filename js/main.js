@@ -178,6 +178,10 @@ $.getJSON('api/fb.php?format=json', function(data){
         $('#loginButton').click(function(){
             $('#reg').css('display', 'block');
         });
+
+        
+
+
         $('#register #submit').click(function(e){
             $.post("api/register.php", getRegisterFormData()).done(function(data){
                 data = JSON.parse(data);
@@ -672,6 +676,10 @@ $(document).ready(function(){
 			$('.fa-close').on('click', function(){
 				hideForms();
 			})
+
+             $('#bit-loginButton').click(function(){
+            $('#bitid-login').css('display', 'block');
+        });
 
 			function hideForms(){
 				forms.css('display', 'none');

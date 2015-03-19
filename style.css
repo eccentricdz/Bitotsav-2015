@@ -80,7 +80,7 @@ a.notif-link{
 #schedule{
 	    position: fixed;
     top: 48px;
-    right: 308px;
+    right: 550px;
     font-weight: bolder;
         border-right: 1px solid;
     padding-right: 11px;}
@@ -653,8 +653,25 @@ button#submit{
 
 .register{
 position: fixed;
-top: 35px;
-right: 52px;
+
+}
+
+button#loginButton{
+	top: 35px;
+right: 282px;
+}
+
+button#bit-loginButton{
+	top: 35px;
+	right: 50px;
+}
+
+#or{
+	    position: fixed;
+    top: 46px;
+    right: 256px;
+    color: white;
+
 }
 
 #reg_comp{
@@ -668,6 +685,8 @@ top: 85px;
 right: 90px;
 font-size: smaller;
 }
+
+
 
 
 
