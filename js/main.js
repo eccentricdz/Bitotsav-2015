@@ -169,6 +169,9 @@ $.getJSON('api/categories.php', function(data){
 // Login stuffs
 $.getJSON('api/fb.php?format=json', function(data){
     if(data['logged_in'] == 1){
+        $('#or').hide();
+        $('#alt-login').hide();
+        $('#bit-loginButton').hide();
         var bannerMsg = '<i class="fa fa-info"></i><span style="font-size:90%;" class="hello-banner">Hi ' + data['first_name']+'</span>';
         var idMsg = ' (ID: BIT'+data['bitid']+')';
         $('#loginButton').attr('href', 'javascript:return false;');
@@ -178,9 +181,6 @@ $.getJSON('api/fb.php?format=json', function(data){
         $('#loginButton').click(function(){
             $('#reg').css('display', 'block');
         });
-
-        
-
 
         $('#register #submit').click(function(e){
             $.post("api/register.php", getRegisterFormData()).done(function(data){
