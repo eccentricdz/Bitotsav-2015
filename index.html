@@ -81,7 +81,7 @@
 	</ul>
 	<img src="images/reg_comp.png" alt="" id="reg_comp" style="display:none">
     <a id="loginButton"><button class="register" id="loginButton"><i class="fa fa-facebook"></i><span class="login-banner">login with facebook</span></button></a><span id="or">or</span>
-    <a id="bit-loginButton"><button class="register" id="bit-loginButton"><i class="fa fa-user"></i><span class="login-banner">login with Bit-ID</span></button></a>
+    <a id="bit-loginButton"><button class="register" id="bit-loginButton"><i class="fa fa-user"></i><span class="login-banner" id="alt-login">login with Bit-ID</span></button></a>
 	<a href="api/logoutfb.php" id="login" class="links" style="display:none"><i class="fa fa-user"></i>Logout</a>
 	
 
@@ -120,19 +120,19 @@
 					<div class="forms" id="bitid-login">
 						<p class="form-head">bitotsav login</p>
 						<i class="fa fa-close fa-2x"></i>
-						<form action="#" id="register">
+						<form action="api/login.php" id="login-bit" method="POST">
 							
 							<div class="input-wrapper">
 								<input type="text" id="bit-id" name="bit-id" required />
-								<label for="tel">Bitotsav ID</label>
+								<label for="tel">Bitotsav ID (Generated at help desk)</label>
 							</div>
 
 							<div class="input-wrapper">
 								<input type="password" id="bit-password" name="bit-password" required/>
-								<label for="college">Password generated at the help desk</label>
+								<label for="college">Password</label>
 							</div>
 
-							<button id='submit'><i class="fa fa-check"></i><span>Submit</span></button>
+							<button type='submit' id='submit'><i class="fa fa-check"></i><span>Submit</span></button>
 
 						</form>
 					</div>
@@ -212,25 +212,8 @@
 							<!-- <p class="heading move-up fade anim hts">hts</p> -->
 						</div>
 
-						<!-- <p class="desc move-right anim fade">Stay Tuned, Coming Soon...</p> -->
 					</li>
 
-<!-- 					<li class="inside amit" id="amit">
-						<img src="images/nights/amit.jpg" alt="amit" class="bg-image" />
-						<div class="title">
-							<p class="heading move-up fade anim">amit trivedi</p>
-							<p class="sub-heading move-up fade anim">pro night</p>
-							<p class="sub-heading move-up fade anim dates">23rd march 2015</p>
-							
-						</div>
-
-						<p class="desc move-right anim fade">Some random description 
-							about the given page. 
-							Briefing the details with 
-							columbus words and 
-							random content</p>
-                            </li>
- -->
                             <li class="inside heritage slide" id="heritage">
 						<img src="images/nights/heritage.jpg" alt="heritage" class="bg-image" />
 						<div class="title">
@@ -267,7 +250,7 @@ Lost Stories and DJ Sartek.</p>
                               <li class="inside band slide" id="band">
 						<img src="images/nights/band.jpg" alt="band" class="bg-image" />
 						<div class="title">
-							<p class="heading move-up fade anim">F-16, white light</p>
+							<p class="heading move-up fade anim">F16's, white light</p>
 							<p class="sub-heading move-up fade anim">band night</p>
 							<p class="sub-heading move-up fade anim dates">21st march 2015</p>
 							
@@ -275,20 +258,20 @@ Lost Stories and DJ Sartek.</p>
 
 						<p class="desc move-right anim fade">Be a part of the finale of the night witnessing western category of the Battle of Bands "White 
 
-Light". Also we have in store a glorious performance by "The F‐16" band.</p>
+Light". Also we have in store a glorious performance by "The F16's" band.</p>
                             </li>
 
 
                             <li class="inside fusion slide" id="fusion">
 						<img src="images/nights/fusions.jpg" alt="fusion" class="bg-image" />
 						<div class="title">
-							<p class="heading move-up fade anim">parikrama, lagori, aalankrit</p>
+							<p class="heading move-up fade anim">parikrama, lagori, alankrita</p>
 							<p class="sub-heading move-up fade anim">fusion night</p>
 							<p class="sub-heading move-up fade anim dates">22nd march 2015</p>
 							
 						</div>
 
-						<p class="desc move-right anim fade">Ensure your presence on the finale of the eastern category of Battle of Bands "Aalankrit" 
+						<p class="desc move-right anim fade">Ensure your presence on the finale of the eastern category of Battle of Bands "Alankrita" 
 
 clubbed with high quotient performance by the band "Lagori" and "Parikrama".</p>
                             </li>
@@ -650,12 +633,12 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                     <ul id="contact-wrapper">
                         <li class="contact-cat">
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Prof. Manoj Kumar Mishra</p>
                                     <p class="contact-pos"><i class="fa fa-user">&nbsp;</i>Patron</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Dr. Bimal Kumar Mishra</p>
                                     <p class="contact-pos"><i class="fa fa-user">&nbsp;</i>Dean Student Welfare</p>
@@ -667,13 +650,13 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             Faculty Coordinator
                             </p>
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Dr. Rajeev Kumar</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>rajeevkumar@bitmesra.ac.in</p>
                                     <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;8986507299</p> -->
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Mr. Mrinal Pathak</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>mrinalkpathak@gmail.com</p>
@@ -688,7 +671,7 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Ankur Agarwal</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>ankur1640.11@bitmesra.ac.in</p>
@@ -702,17 +685,23 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Arvind Bedia</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>arvi.bedia0909@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7870503208</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Jay Megotia</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>jaykumarmegotia@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7677153992</p>
+                                </li>
+                                <li>
+                                    <div class="contact-img"></div>
+                                    <p class="contact-name">Kumar Shrey</p>
+                                    <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>kumarshrey13@gmail.com</p>
+                                    <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9472868389</p>
                                 </li>
                             </ul>
                         </li>
@@ -722,29 +711,29 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Soham Chatterjee</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>sohamchatt10@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7761827975</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Abhishek Shekhar</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sohamchatt10@gmail.com</p> -->
                                     <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;7761827975</p> -->
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Anurag Nandkeolyar</p>
-                                    <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sohamchatt10@gmail.com</p> -->
-                                    <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;7761827975</p> -->
+                                    <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>nandkeolyar.anurag@gmail.com</p>
+                                    <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9534588664</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
-                                    <p class="contact-name">Anam Ahmad</p>
-                                    <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sohamchatt10@gmail.com</p> -->
-                                    <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;7761827975</p> -->
+                                    <p class="contact-name">Devesh Chandra</p>
+                                    <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>devesh1633.11@bitmesra.ac.in</p>
+                                    <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9934210629</p>
                                 </li>
                             </ul>
                         </li>
@@ -754,13 +743,13 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Soham Ray</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>sohamray13@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7091775765</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Swapnil Agarwal</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>agrawal.swapnil24@gmail.com</p>
@@ -774,43 +763,43 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Akash</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>aashu147@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9709054170</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Ashhar Jawaid</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>ashhar24@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-8986848739</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Amandeep Singh</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>amanbisla33@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-8102131738</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Sharad Agrawal</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>sharadagrawal.bit@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7549014303</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Rajeeta Prasad</p>
-                                    <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sharadagrawal.bit@gmail.com</p> -->
-                                    <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;7549014303</p> -->
+                                    <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>rozita.bitmesra@gmail.com</p>
+                                    <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-8987455089</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Gopika Jhunjhunwala</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sharadagrawal.bit@gmail.com</p> -->
                                     <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;7549014303</p> -->
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Ranjana Kant Verma</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>sharadagrawal.bit@gmail.com</p> -->
@@ -824,31 +813,31 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Aishwarya Garg</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>aishwaryagarg93@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-8987512197</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Pratiush Kumar</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>14kumarpratiush@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-7209307359</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Harsh Kr. Agrawal</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>harsh1681.11@bitmesra.ac.in</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9471017381</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Smriti Dewari</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>harsh1681.11@bitmesra.ac.in</p> -->
                                     <!-- <p class="contact&#45;phone"><i class="fa fa&#45;phone">&#38;nbsp;</i>+91&#45;9471017381</p> -->
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Harsh Vardhan</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>harsh1681.11@bitmesra.ac.in</p> -->
@@ -862,13 +851,13 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Amit Kumar</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>amitanshu26@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-9031323571</p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Abhishek Choudhary</p>
                                     <!-- <p class="contact&#45;email"><i class="fa fa&#45;envelope&#45;o">&#38;nbsp;</i>jaykumarmegotia@gmail.com</p> -->
@@ -882,14 +871,14 @@ and Vipul Mehra who will escort you to the heaven of music through the night.</p
                             </p>
 
                             <ul class="contact-them">
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Rahul Agarwal</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>simplyrahul93@gmail.com</p>
                                     <p class="contact-phone"><i class="fa fa-phone">&nbsp;</i>+91-8797593485</p>
                                     <p class="contact-web"><i class="fa fa-link">&nbsp;</i><a target="_blank" href="http://eccentricdz.github.io">eccentricdz.github.io</a></p>
                                 </li>
-                                <li id='ankur'>
+                                <li>
                                     <div class="contact-img"></div>
                                     <p class="contact-name">Nimesh Ghelani</p>
                                     <p class="contact-email"><i class="fa fa-envelope-o">&nbsp;</i>nimeshghelani@gmail.com</p>
