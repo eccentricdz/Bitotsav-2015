@@ -690,6 +690,8 @@ font-size: smaller;
 
 
 
+
+
 #submit{
 	display: block;
 	margin: 40px auto;
@@ -994,6 +996,12 @@ color:#60BCAF;
 
 .page.contact .fa{
 	color: #9DB498;
+}
+
+.page.sponsors{
+	background: #BFBFBF;
+	overflow: auto;
+	color: rgb(78, 58, 52);
 }
 
 #contact-wrapper{
@@ -1393,6 +1401,8 @@ box-shadow: 0px -5px 11px rgba(0,0,0,0.7);
     word-wrap: break-word;
 }
 
+
+
 #forum-msgs .user{
 	color: rgb(182, 182, 182);
 }
@@ -1410,3 +1420,50 @@ color: #FFE066;
 	font-style: italic;
 }
 
+.sponsor-img{
+	max-width: 75px;
+	transform: translateY(10px);
+}
+
+.sponsors-list{
+	list-style-type: none;
+	width: 80%;
+	margin: 7px auto;
+	padding: 15px 0;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	overflow: hidden;
+	transform: translateX(-60px);
+}
+
+#powered{}
+
+#usual-sponsors{
+	margin-bottom: 140px;
+	
+}
+.sponsors-list > li{
+	float: left;
+}
+#mainsponsor{
+margin: 120px 177px 35px 0;
+text-align: center;
+}
+
+
+#powered > li{
+	width: 29%;
+	padding: 0px 50px;
+	height: 125px;
+}
+
+
+#usual-sponsors > li{
+	width: 20%;
+	height: 150px;
+}
+
+.sponsor-desc{
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
